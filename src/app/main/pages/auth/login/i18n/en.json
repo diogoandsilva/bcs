@@ -1,0 +1,21 @@
+{
+    "LOGIN": {
+        "TITLE": "Entrar na sua Conta",
+        "EMAIL": "Email",
+        "PASSWORD": "Senha",
+        "REMEMBER_ME": "Lembrar-se de mim",
+        "FORGOT_PASSWORD": "Esqueceu sua senha?",
+        "LOG_IN": "ENTRAR",
+        "OR": "OR",
+        "WITH_GOOGLE": "Log in with Google",
+        "WITH_FACEBOOK": "Log in with Facebook",
+        "DONT_HAVE_ACCOUNT": "Don't have an account?",
+        "CREATE_ACCOUNT": "Create an account",
+        "ERRORS": {
+            "EMAIL_REQUIRED": "Favor informar um email",
+            "EMAIL_MUST_VALID": "Favor informar um email válido",
+            "PASSWORD_REQUIRED": "Favor informar uma senha",
+            "PASSWORD_INVALID": "Senha incorreta."
+        }
+    }
+}

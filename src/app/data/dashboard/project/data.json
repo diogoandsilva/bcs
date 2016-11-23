@@ -1,0 +1,1078 @@
+{
+    "projects": [
+        {
+            "name": "Campo Limpo Paulista"
+        },
+        {
+            "name": "VB1"
+        },
+        {
+            "name": "VB3"
+        },
+        {
+            "name": "Boa Vista"
+        },
+        {
+            "name": "Ouro Verde"
+        },
+        {
+            "name": "Campo dos Ouros"
+        },
+        {
+            "name": "Sorocaba"
+        },
+        {
+            "name": "Iperó"
+        }
+    ],
+    "widget1": {
+        "ranges": {
+            "DY": "Ontem",
+            "DT": "Hoje",
+            "DTM": "Amanhã"
+        },
+        "currentRange": "DT",
+        "data": {
+            "label": "PENDENCIAS ABERTAS",
+            "count": {
+                "DY": 115,
+                "DT": 123,
+                "DTM": 98
+            },
+            "extra": {
+                "label": "Identificadas",
+                "count": {
+                    "DY": 95,
+                    "DT": 99,
+                    "DTM": "-"
+                }
+            }
+        },
+        "detail": "A pendência está aberta quando é criada e precisa ser identificada."
+    },
+    "widget2": {
+        "title": "Pendências",
+        "data": {
+            "label": "GRAVES",
+            "count": 49,
+            "extra": {
+                "label": "Identificadas",
+                "count": 42
+            }
+        },
+        "detail": "You can show some detailed information about this widget in here."
+    },
+    "widget3": {
+        "title": "Pendências",
+        "data": {
+            "label": "MÉDIAS",
+            "count": 32,
+            "extra": {
+                "label": "Identificadas",
+                "count": 19
+            }
+        },
+        "detail": "You can show some detailed information about this widget in here."
+    },
+    "widget4": {
+        "title": "Pendências",
+        "data": {
+            "label": "LEVES",
+            "count": 42,
+            "extra": {
+                "label": "Identificadas",
+                "count": 38
+            }
+        },
+        "detail": "You can show some detailed information about this widget in here."
+    },
+    "widget5": {
+        "title": "Pendencias Diárias",
+        "ranges": {
+            "TW": "Semana Atual",
+            "LW": "Semana passada",
+            "2W": "Mes Anterior"
+        },
+        "mainChart": [
+            {
+                "key": "Pedencias Identificadas",
+                "values": {
+                    "2W": [
+                        {"x": "Seg", "y": 29},
+                        {"x": "Ter", "y": 22},
+                        {"x": "Qua", "y": 9},
+                        {"x": "Qui", "y": 12},
+                        {"x": "Sex", "y": 7},
+                        {"x": "Sab", "y": 8},
+                        {"x": "Dom", "y": 16}
+                    ],
+                    "LW": [
+                        {"x": "Seg", "y": 12},
+                        {"x": "Ter", "y": 8},
+                        {"x": "Qua", "y": 7},
+                        {"x": "Qui", "y": 13},
+                        {"x": "Sex", "y": 7},
+                        {"x": "Sab", "y": 6},
+                        {"x": "Dom", "y": 10}
+                    ],
+                    "TW": [
+                        {"x": "Seg", "y": 11},
+                        {"x": "Ter", "y": 10},
+                        {"x": "Qua", "y": 8},
+                        {"x": "Qui", "y": 11},
+                        {"x": "Sex", "y": 8},
+                        {"x": "Sab", "y": 10},
+                        {"x": "Dom", "y": 17}
+                    ]
+                }
+            },
+            {
+                "key": "Pendencias Abertas",
+                "values": {
+                    "2W": [
+                        {"x": "Seg", "y": 37},
+                        {"x": "Ter", "y": 32},
+                        {"x": "Qua", "y": 39},
+                        {"x": "Qui", "y": 27},
+                        {"x": "Sex", "y": 18},
+                        {"x": "Sab", "y": 24},
+                        {"x": "Dom", "y": 20}
+                    ],
+                    "LW": [
+                        {"x": "Seg", "y": 37},
+                        {"x": "Ter", "y": 24},
+                        {"x": "Qua", "y": 51},
+                        {"x": "Qui", "y": 31},
+                        {"x": "Sex", "y": 29},
+                        {"x": "Sab", "y": 17},
+                        {"x": "Dom", "y": 31}
+                    ],
+                    "TW": [
+                        {"x": "Seg", "y": 42},
+                        {"x": "Ter", "y": 28},
+                        {"x": "Qua", "y": 43},
+                        {"x": "Qui", "y": 34},
+                        {"x": "Sex", "y": 20},
+                        {"x": "Sab", "y": 25},
+                        {"x": "Dom", "y": 22}
+                    ]
+                }
+            }
+        ],
+        "supporting": {
+            "created": {
+                "label": "ABERTAS",
+                "count": {
+                    "2W": 48,
+                    "LW": 46,
+                    "TW": 54
+                },
+                "chart": {
+                    "key": "Abertas",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 8},
+                            {"x": 2, "y": 5},
+                            {"x": 3, "y": 6},
+                            {"x": 4, "y": 7},
+                            {"x": 5, "y": 8},
+                            {"x": 6, "y": 7}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 3},
+                            {"x": 1, "y": 2},
+                            {"x": 2, "y": 1},
+                            {"x": 3, "y": 4},
+                            {"x": 4, "y": 8},
+                            {"x": 5, "y": 8},
+                            {"x": 6, "y": 4}
+                        ]
+                    }
+                }
+            },
+            "closed": {
+                "label": "FECHADAS",
+                "count": {
+                    "2W": 27,
+                    "LW": 31,
+                    "TW": 26
+                },
+                "chart": {
+                    "key": "Fechadas",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 3},
+                            {"x": 1, "y": 2},
+                            {"x": 2, "y": 1},
+                            {"x": 3, "y": 4},
+                            {"x": 4, "y": 8},
+                            {"x": 5, "y": 8},
+                            {"x": 6, "y": 4}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 5},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 7},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ]
+                    }
+                }
+            },
+            "reOpened": {
+                "label": "PRONTAS",
+                "count": {
+                    "2W": 4,
+                    "LW": 5,
+                    "TW": 2
+                },
+                "chart": {
+                    "key": "Prontas",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 7},
+                            {"x": 2, "y": 8},
+                            {"x": 3, "y": 8},
+                            {"x": 4, "y": 6},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 1}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 3},
+                            {"x": 1, "y": 2},
+                            {"x": 2, "y": 1},
+                            {"x": 3, "y": 4},
+                            {"x": 4, "y": 8},
+                            {"x": 5, "y": 8},
+                            {"x": 6, "y": 4}
+                        ]
+                    }
+                }
+            },
+            "wontFix": {
+                "label": "DELEGADAS",
+                "count": {
+                    "2W": 6,
+                    "LW": 3,
+                    "TW": 4
+                },
+                "chart": {
+                    "key": "DELEGADAS",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 7},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 6},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 3},
+                            {"x": 6, "y": 2}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 5},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 7},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ]
+                    }
+                }
+            },
+            "needsTest": {
+                "label": "COM ERROS",
+                "count": {
+                    "2W": 10,
+                    "LW": 7,
+                    "TW": 8
+                },
+                "chart": {
+                    "key": "COM ERROS",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 5},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 7},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 7},
+                            {"x": 2, "y": 8},
+                            {"x": 3, "y": 8},
+                            {"x": 4, "y": 6},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 1}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ]
+                    }
+                }
+            },
+            "fixed": {
+                "label": "FECHADAS",
+                "count": {
+                    "2W": 21,
+                    "LW": 17,
+                    "TW": 14
+                },
+                "chart": {
+                    "key": "FECHADAS",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 7},
+                            {"x": 2, "y": 8},
+                            {"x": 3, "y": 8},
+                            {"x": 4, "y": 6},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 1}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 5},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 7},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 7},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 6},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 3},
+                            {"x": 6, "y": 2}
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "widget6": {
+        "title": "Pendências por Tipo",
+        "ranges": {
+            "TW": "Semana Atual",
+            "LW": "Semana Anterior",
+            "2W": "Mês Anterior"
+        },
+        "mainChart": [
+            {
+                "label": "Utilizando o celular",
+                "values": {
+                    "2W": 18,
+                    "LW": 19,
+                    "TW": 15
+                }
+            },
+            {
+                "label": "Carona",
+                "values": {
+                    "2W": 17,
+                    "LW": 16,
+                    "TW": 20
+                }
+            },
+            {
+                "label": "Evasão de Receita",
+                "values": {
+                    "2W": 40,
+                    "LW": 42,
+                    "TW": 38
+                }
+            },
+            {
+                "label": "Mão no Câmbio",
+                "values": {
+                    "2W": 25,
+                    "LW": 23,
+                    "TW": 27
+                }
+            }
+        ],
+        "footerLeft": {
+            "title": "Pendências Abertas",
+            "count": {
+                "2W": 487,
+                "LW": 526,
+                "TW": 594
+            }
+        },
+        "footerRight": {
+            "title": "Pendências Identificadas",
+            "count": {
+                "2W": 393,
+                "LW": 360,
+                "TW": 387
+            }
+        }
+    },
+    "widget7": {
+        "title": "Horários por Turno",
+        "ranges": {
+            "T": "Turno 1",
+            "TM": "Turno 2"
+        },
+        "schedule": {
+            "T": [
+                {
+                    "title": "Entrada Turno 1",
+                    "time": "06:00"
+                },
+                {
+                    "title": "Horario de Pausa 1",
+                    "time": "07:30 - 07:45"
+                },
+                {
+                    "title": "Horario de Pausa 2",
+                    "time": "09:00 - 09:15"
+                },
+                {
+                    "title": "Inicio do Almoço Turno 1",
+                    "time": "11:00"
+                },
+                {
+                    "title": "Fim do Almoço Turno 1",
+                    "time": "12:00"
+                },
+                {
+                    "title": "Horario de Pausa 3",
+                    "time": "13:30 - 13:45"
+                },
+                {
+                    "title": "Fim Turno 1",
+                    "time": "14:20"
+                }
+            ],
+            "TM": [
+                {
+                    "title": "Entrada Turno 2",
+                    "time": "14:20"
+                },
+                {
+                    "title": "Horario de Pausa 1",
+                    "time": "15:30 - 15:45"
+                },
+                {
+                    "title": "Horario de Pausa 2",
+                    "time": "17:00 - 17:15"
+                },
+                {
+                    "title": "Inicio do Jantar Turno 2",
+                    "time": "18:00"
+                },
+                {
+                    "title": "Fim do Jantar Turno 2",
+                    "time": "19:00"
+                },
+                {
+                    "title": "Horario de Pausa 3",
+                    "time": "20:30 - 20:45"
+                },
+                {
+                    "title": "Fim Turno 2",
+                    "time": "22:40"
+                }
+            ]
+        }
+    },
+    "widget8": {
+        "title": "Custo Mensal do setor %",
+        "mainChart": [
+            {
+                "label": "Funcionários",
+                "value": 45
+            },
+            {
+                "label": "Equipamentos",
+                "value": 35
+            },
+            {
+                "label": "Chips",
+                "value": 15
+            },
+            {
+                "label": "Outros",
+                "value": 10
+            }
+        ]
+    },
+    "widget9": {
+        "title": "Valor Gasto",
+        "ranges": {
+            "TW": "Mês Atual",
+            "LW": "Mês Anterior",
+            "2W": "2 Meses atrás"
+        },
+        "weeklySpent": {
+            "title": "GASTO SEMANAL",
+            "count": {
+                "2W": "2,682.85",
+                "LW": "1,445.34",
+                "TW": "3,630.15"
+            },
+            "chart": {
+                "label": "Weekly Spent",
+                "values": {
+                    "2W": [
+                        {"x": 0, "y": 6},
+                        {"x": 1, "y": 1},
+                        {"x": 2, "y": 3},
+                        {"x": 3, "y": 4},
+                        {"x": 4, "y": 5},
+                        {"x": 5, "y": 5},
+                        {"x": 6, "y": 2}
+                    ],
+                    "LW": [
+                        {"x": 0, "y": 4},
+                        {"x": 1, "y": 6},
+                        {"x": 2, "y": 2},
+                        {"x": 3, "y": 2},
+                        {"x": 4, "y": 1},
+                        {"x": 5, "y": 3},
+                        {"x": 6, "y": 4}
+                    ],
+                    "TW": [
+                        {"x": 0, "y": 2},
+                        {"x": 1, "y": 6},
+                        {"x": 2, "y": 5},
+                        {"x": 3, "y": 4},
+                        {"x": 4, "y": 5},
+                        {"x": 5, "y": 3},
+                        {"x": 6, "y": 6}
+                    ]
+                }
+            }
+        },
+        "totalSpent": {
+            "title": "TOTAL GASTO",
+            "count": {
+                "2W": "62,748.00",
+                "LW": "62,748.00",
+                "TW": "62,748.00"
+            },
+            "chart": {
+                "label": "Spent",
+                "values": {
+                    "2W": [
+                        {"x": 0, "y": 3},
+                        {"x": 1, "y": 2},
+                        {"x": 2, "y": 2},
+                        {"x": 3, "y": 4},
+                        {"x": 4, "y": 7},
+                        {"x": 5, "y": 7},
+                        {"x": 6, "y": 4}
+                    ],
+                    "LW": [
+                        {"x": 0, "y": 5},
+                        {"x": 1, "y": 7},
+                        {"x": 2, "y": 8},
+                        {"x": 3, "y": 8},
+                        {"x": 4, "y": 6},
+                        {"x": 5, "y": 4},
+                        {"x": 6, "y": 1}
+                    ],
+                    "TW": [
+                        {"x": 0, "y": 6},
+                        {"x": 1, "y": 3},
+                        {"x": 2, "y": 7},
+                        {"x": 3, "y": 5},
+                        {"x": 4, "y": 5},
+                        {"x": 5, "y": 4},
+                        {"x": 6, "y": 7}
+                    ]
+                }
+            }
+        },
+        "remaining": {
+            "title": "RESTANTE",
+            "count": {
+                "2W": "1.252,00",
+                "LW": "1.252,00",
+                "TW": "1.252,00"
+            },
+            "chart": {
+                "label": "Restante",
+                "values": {
+                    "2W": [
+                        {"x": 0, "y": 1},
+                        {"x": 1, "y": 4},
+                        {"x": 2, "y": 5},
+                        {"x": 3, "y": 7},
+                        {"x": 4, "y": 8},
+                        {"x": 5, "y": 2},
+                        {"x": 6, "y": 4}
+                    ],
+                    "LW": [
+                        {"x": 0, "y": 3},
+                        {"x": 1, "y": 2},
+                        {"x": 2, "y": 1},
+                        {"x": 3, "y": 4},
+                        {"x": 4, "y": 8},
+                        {"x": 5, "y": 8},
+                        {"x": 6, "y": 4}
+                    ],
+                    "TW": [
+                        {"x": 0, "y": 2},
+                        {"x": 1, "y": 4},
+                        {"x": 2, "y": 8},
+                        {"x": 3, "y": 6},
+                        {"x": 4, "y": 2},
+                        {"x": 5, "y": 5},
+                        {"x": 6, "y": 1}
+                    ]
+                }
+            }
+        },
+        "totalRemaining": {
+            "title": "Total Gasto",
+            "count": "64.000,00"
+        },
+        "totalBudget": {
+            "title": "TOTAL ALOCADO",
+            "count": "64.000,00"
+        }
+    },
+    "widget10": {
+        "title": "Detalhamento de Custo",
+        "table": {
+            "columns": [
+                {
+                    "title": "Tipo de Custo"
+                },
+                {
+                    "title": "Total Alocado"
+                },
+                {
+                    "title": "Valor Gasto (R$)"
+                },
+                {
+                    "title": "Gasto (%)"
+                },
+                {
+                    "title": "Restante (R$)"
+                },
+                {
+                    "title": "Restante (%)"
+                }
+            ],
+            "rows": [
+                [
+                    {
+                        "value": "Funcionários",
+                        "classes": "text-boxed m-0 deep-orange-bg white-fg",
+                        "icon": ""
+                    },
+                    {
+                        "value": "R$ 44,880.00",
+                        "classes": "text-bold",
+                        "icon": ""
+                    },
+                    {
+                        "value": "R$ 44,000.00",
+                        "classes": "",
+                        "icon": ""
+                    },
+                    {
+                        "value": "% 99.08",
+                        "classes": "red-fg",
+                        "icon": "icon icon-trending-up s14 red-fg"
+                    },
+                    {
+                        "value": "R$ 880.00",
+                        "classes": "",
+                        "icon": ""
+                    },
+                    {
+                        "value": "% 0.92",
+                        "classes": "",
+                        "icon": ""
+                    }
+                ],
+                [
+                    {
+                        "value": "Equipamentos",
+                        "classes": "text-boxed m-0 purple-bg white-fg",
+                        "icon": ""
+                    },
+                    {
+                        "value": "R$ 21,080.00",
+                        "classes": "text-bold",
+                        "icon": ""
+                    },
+                    {
+                        "value": "R$ 17,240.34",
+                        "classes": "",
+                        "icon": ""
+                    },
+                    {
+                        "value": "% 81.78",
+                        "classes": "red-fg",
+                        "icon": "icon icon-trending-up s14 red-fg"
+                    },
+                    {
+                        "value": "R$ 3,839.66",
+                        "classes": "",
+                        "icon": ""
+                    },
+                    {
+                        "value": "% 18.22",
+                        "classes": "",
+                        "icon": ""
+                    }
+                ],
+                [
+                    {
+                        "value": "Chips",
+                        "classes": "text-boxed m-0 light-blue-bg white-fg",
+                        "icon": ""
+                    },
+                    {
+                        "value": "R$ 1,720.00",
+                        "classes": "text-bold",
+                        "icon": ""
+                    },
+                    {
+                        "value": "R$ 1,508.00",
+                        "classes": "",
+                        "icon": ""
+                    },
+                    {
+                        "value": "% 89.87",
+                        "classes": "red-fg",
+                        "icon": "icon icon-trending-up s14 red-fg"
+                    },
+                    {
+                        "value": "R$ 212.00",
+                        "classes": "",
+                        "icon": ""
+                    },
+                    {
+                        "value": "% 10.13",
+                        "classes": "",
+                        "icon": ""
+                    }
+                ],
+                [
+                    {
+                        "value": "Outros",
+                        "classes": "text-boxed m-0 pink-bg white-fg",
+                        "icon": ""
+                    },
+                    {
+                        "value": "R$ 34,720.00",
+                        "classes": "text-bold",
+                        "icon": ""
+                    },
+                    {
+                        "value": "R$ 0.00",
+                        "classes": "",
+                        "icon": ""
+                    },
+                    {
+                        "value": "% 0.00",
+                        "classes": "green-fg",
+                        "icon": "icon icon-minus s14 green-fg"
+                    },
+                    {
+                        "value": "R$ 34,720.00",
+                        "classes": "",
+                        "icon": ""
+                    },
+                    {
+                        "value": "%100.00",
+                        "classes": "",
+                        "icon": ""
+                    }
+                ]
+            ]
+        }
+    },
+    "widget11": {
+        "title": "Monitores",
+        "table": {
+            "columns": [
+                {
+                    "title": ""
+                },
+                {
+                    "title": "Nome"
+                },
+                {
+                    "title": "Posição"
+                },
+                {
+                    "title": "Cargo"
+                },
+                {
+                    "title": "Email"
+                },
+                {
+                    "title": "Celular"
+                }
+            ],
+            "rows": [
+                [
+                    "james.jpg",
+                    "Jack Gilbert",
+                    "Design Manager",
+                    "Johor Bahru",
+                    "jgilbert48@mail.com",
+                    "+16 298 032 7774"
+                ],
+                [
+                    "katherine.jpg",
+                    "Kathy Anderson",
+                    "Recruiting Manager",
+                    "Solţānābād",
+                    "kanderson49@mail.com.br",
+                    "+23 572 311 1136"
+                ],
+                [
+                    "andrew.jpg",
+                    "Mark Turner",
+                    "Recruiting Manager",
+                    "Neftegorsk",
+                    "mturner4a@mail.com",
+                    "+01 139 803 9263"
+                ],
+                [
+                    "jane.jpg",
+                    "Kathryn Martinez",
+                    "Director of Sales",
+                    "Palekastro",
+                    "kmartinez4b@mail.com",
+                    "+25 467 022 5393"
+                ],
+                [
+                    "alice.jpg",
+                    "Annie Gonzales",
+                    "Actuary",
+                    "Candon",
+                    "agonzales4c@mail.edu",
+                    "+99 891 619 7138"
+                ],
+                [
+                    "vincent.jpg",
+                    "Howard King",
+                    "Human Resources",
+                    "Bergen op Zoom",
+                    "hking4d@mail.gov",
+                    "+46 984 348 1409"
+                ],
+                [
+                    "joyce.jpg",
+                    "Elizabeth Dixon",
+                    "Electrical Engineer",
+                    "Písečná",
+                    "edixon4e@mail.gov",
+                    "+33 332 067 9063"
+                ],
+                [
+                    "danielle.jpg",
+                    "Dorothy Morris",
+                    "Office Assistant",
+                    "Magsaysay",
+                    "dmorris4f@mail.com",
+                    "+05 490 958 6120"
+                ],
+                [
+                    "carl.jpg",
+                    "Mark Gonzales",
+                    "Quality Control",
+                    "Matsue-shi",
+                    "mgonzales4g@mail.com",
+                    "+03 168 394 9935"
+                ],
+                [
+                    "profile.jpg",
+                    "Catherine Rogers",
+                    "Programmer Analyst",
+                    "Kangar",
+                    "crogers4h@mail.com",
+                    "+86 235 407 5373"
+                ],
+                [
+                    "garry.jpg",
+                    "Ruth Grant",
+                    "Community Outreach",
+                    "Beaune",
+                    "rgrant4i@mail.pl",
+                    "+36 288 083 8460"
+                ],
+                [
+                    "james.jpg",
+                    "Phyllis Gutierrez",
+                    "Administrative Assistant",
+                    "Shlissel’burg",
+                    "pgutierrez4j@mail.net",
+                    "+52 749 861 9304"
+                ],
+                [
+                    "alice.jpg",
+                    "Lillian Morris",
+                    "Media Planner",
+                    "Berlin",
+                    "lmorris4k@mail.de",
+                    "+59 695 110 3856"
+                ],
+                [
+                    "vincent.jpg",
+                    "Jeremy Anderson",
+                    "Systems Engineer",
+                    "Lũng Hồ",
+                    "janderson4l@mail.uk",
+                    "+40 384 115 1448"
+                ],
+                [
+                    "carl.jpg",
+                    "Arthur Lawrence",
+                    "Nurse Practicioner",
+                    "Sarkanjut",
+                    "alawrence4m@mail.com",
+                    "+36 631 599 7867"
+                ],
+                [
+                    "andrew.jpg",
+                    "David Simmons",
+                    "Social Worker",
+                    "Ushumun",
+                    "dsimmons4n@mail.com",
+                    "+01 189 681 4417"
+                ],
+                [
+                    "danielle.jpg",
+                    "Daniel Johnston",
+                    "Help Desk",
+                    "São Carlos",
+                    "djohnston4o@mail.gov",
+                    "+60 028 943 7919"
+                ],
+                [
+                    "joyce.jpg",
+                    "Ann King",
+                    "Internal Auditor",
+                    "Liren",
+                    "aking4p@mail.com",
+                    "+91 103 932 6545"
+                ],
+                [
+                    "james.jpg",
+                    "Phillip Franklin",
+                    "VP Accounting",
+                    "Soba",
+                    "pfranklin4q@mail.com",
+                    "+25 820 986 7626"
+                ],
+                [
+                    "garry.jpg",
+                    "Gary Gonzalez",
+                    "Speech Pathologist",
+                    "Gangkou",
+                    "ggonzalez4r@mail.cc",
+                    "+10 862 046 7916"
+                ]
+            ]
+        }
+    },
+    "weatherWidget": {
+        "locations": {
+            "NewYork": {
+                "name": "Campo Limpo Paulista",
+                "icon": "icon-weather-pouring",
+                "temp": {
+                    "C": "22",
+                    "F": "72"
+                },
+                "windSpeed": {
+                    "KMH": 12,
+                    "MPH": 7.5
+                },
+                "windDirection": "NW",
+                "rainProbability": "98%",
+                "next3Days": [
+                    {
+                        "name": "Sunday",
+                        "icon": "icon-weather-pouring",
+                        "temp": {
+                            "C": "21",
+                            "F": "70"
+                        }
+                    },
+                    {
+                        "name": "Sunday",
+                        "icon": "icon-weather-pouring",
+                        "temp": {
+                            "C": "19",
+                            "F": "66"
+                        }
+                    },
+                    {
+                        "name": "Tuesday",
+                        "icon": "icon-weather-partlycloudy",
+                        "temp": {
+                            "C": "24",
+                            "F": "75"
+                        }
+                    }
+                ]
+            }
+        },
+        "currentLocation": "Campo Limpo Paulista",
+        "tempUnit": "C",
+        "speedUnit": "KMH"
+    }
+}

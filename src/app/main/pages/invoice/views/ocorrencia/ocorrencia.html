@@ -1,0 +1,96 @@
+<div id="invoice" class="ocorrencia page-layout blank" layout="row" ms-scroll>
+    <div class="invoice-container">
+
+        <!-- INVOICE -->
+        <div class="card md-whiteframe-8dp">
+            <div class="header" layout="row" layout-align="space-between start">
+                <div class="ids" layout="column">
+                    <div layout="row" class="seller" layout-align="start center">
+                        <div class="logo md-accent-bg" layout="row" layout-align="center center">
+                            <div>BCS</div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                    </div>
+                </div>
+
+                <table class="summary">
+                    <tr class="code">
+                        <td class="label" translate="INVOICE.INVOICE">INVOICE</td>
+                        <td class="value">{{vm.invoice.number}}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">FUNCIONÁRIO</td>
+                        <td class="value">27000 - DIOGO DE ANDRADE SILVA</td>
+                    </tr>
+                    <tr>
+                        <td class="label" translate="INVOICE.INVOICE_DATE">INVOICE DATE</td>
+                        <td class="value">{{vm.invoice.date}}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">VEÍCULO</td>
+                        <td class="value">133477</td>
+                    </tr>
+                    <tr>
+                        <td class="label">MONITOR</td>
+                        <td class="value">01</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="content">
+
+                <div layout="row" layout-align="start start">
+                    <div class="small-note" translate="INVOICE.SMALL_NOTE">
+                        Conforme as cameras de monitoramento do veiculo.
+                    </div>
+                </div>
+
+                <table class="simple invoice-table">
+                    <thead>
+                        <th translate="INVOICE.UNIT">UNIT</th>
+                        <th translate="INVOICE.SERVICE">SERVICE</th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="service in vm.invoice.services">
+                            <td>
+                                {{service.unit}}
+                            </td>
+                            <td>
+                                <div class="title"> {{service.title}}</div>
+                                <div class="detail"> {{service.detail}}</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="teste">
+                  <img src={{vm.invoice.foto}}>
+                </div>
+            </div>
+
+            <div class="footer" layout="row">
+                <div class="detail"  layout="column">
+                  <div>_____________________________</div>
+                    <div class="title">{{vm.invoice.client.title}}</div>
+                    <div ng-if="vm.invoice.client.address" class="address">Matricula: 2700</div>
+                    <div class="title">Data: 10/10/2016</div>
+                </div>
+
+                <div class="detail-right"  layout="column">
+                    <div>_____________________________</div>
+                    <div class="title">{{vm.invoice.funcionario.title}}</div>
+                    <div ng-if="vm.invoice.client.address" class="address">Matricula: 2700</div>
+                    <div class="title">Data: 10/10/2016</div>
+                </div>
+
+            </div>
+        </div>
+        <!-- / INVOICE -->
+
+        <!-- Use the following element to add breaks to your pages -->
+        <!-- This will make sure that the section after this element will be printed on a new page -->
+        <div class="page-break"></div>
+
+    </div>
+</div>

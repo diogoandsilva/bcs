@@ -1,0 +1,23 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "grave",
+            "label": "Graves",
+            "color": "#F44336"
+        },
+        {
+            "id": 2,
+            "name": "media",
+            "label": "Médias",
+            "color": "#FF9800"
+
+        },
+        {
+            "id": 3,
+            "name": "leve",
+            "label": "Leves",
+            "color": "#388E3C"
+        }
+    ]
+}

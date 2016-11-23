@@ -1,0 +1,187 @@
+{
+    "projects": [
+        {
+            "name": "Rapido Luxo Campinas"
+        },
+        {
+            "name": "VB1"
+        },
+        {
+            "name": "Boa Vista"
+        },
+        {
+            "name": "Ouro Verde"
+        }
+    ],
+
+    "widget11": {
+        "title": "Usuários",
+        "table": {
+            "columns": [
+                {
+                    "title": ""
+                },
+                {
+                    "title": "Nome"
+                },
+                {
+                    "title": "Id"
+                },
+                {
+                    "title": "Cargo"
+                },
+                {
+                    "title": "Email"
+                },
+                {
+                    "title": "Celular"
+                }
+            ],
+            "rows": [
+                [
+                    "james.jpg",
+                    "Jack Gilbert",
+                    "Design Manager",
+                    "Johor Bahru",
+                    "jgilbert48@mail.com",
+                    "11 99999-1111"
+                ],
+                [
+                    "katherine.jpg",
+                    "Kathy Anderson",
+                    "Recruiting Manager",
+                    "Solţānābād",
+                    "kanderson49@mail.com.br",
+                    "11 99999-1111"
+                ],
+                [
+                    "andrew.jpg",
+                    "Mark Turner",
+                    "Recruiting Manager",
+                    "Neftegorsk",
+                    "mturner4a@mail.com",
+                    "11 99999-1111"
+                ],
+                [
+                    "jane.jpg",
+                    "Kathryn Martinez",
+                    "Director of Sales",
+                    "Palekastro",
+                    "kmartinez4b@mail.com",
+                    "11 99999-1111"
+                ],
+                [
+                    "alice.jpg",
+                    "Annie Gonzales",
+                    "Actuary",
+                    "Candon",
+                    "agonzales4c@mail.edu",
+                    "11 99999-1111"
+                ],
+                [
+                    "vincent.jpg",
+                    "Howard King",
+                    "Human Resources",
+                    "Bergen op Zoom",
+                    "hking4d@mail.gov",
+                    "11 99999-1111"
+                ],
+                [
+                    "joyce.jpg",
+                    "Elizabeth Dixon",
+                    "Electrical Engineer",
+                    "Písečná",
+                    "edixon4e@mail.gov",
+                    "11 99999-1111"
+                ],
+                [
+                    "danielle.jpg",
+                    "Dorothy Morris",
+                    "Office Assistant",
+                    "Magsaysay",
+                    "dmorris4f@mail.com",
+                    "11 99999-1111"
+                ],
+                [
+                    "carl.jpg",
+                    "Mark Gonzales",
+                    "Quality Control",
+                    "Matsue-shi",
+                    "mgonzales4g@mail.com",
+                    "11 99999-1111"
+                ],
+                [
+                    "profile.jpg",
+                    "Catherine Rogers",
+                    "Programmer Analyst",
+                    "Kangar",
+                    "crogers4h@mail.com",
+                    "11 99999-1111"
+                ],
+                [
+                    "garry.jpg",
+                    "Ruth Grant",
+                    "Community Outreach",
+                    "Beaune",
+                    "rgrant4i@mail.pl",
+                    "11 99999-1111"
+                ],
+                [
+                    "james.jpg",
+                    "Phyllis Gutierrez",
+                    "Administrative Assistant",
+                    "Shlissel’burg",
+                    "pgutierrez4j@mail.net",
+                    "11 99999-1111"
+                ]
+            ]
+        }
+    },
+    "weatherWidget": {
+        "locations": {
+            "NewYork": {
+                "name": "Campo Limpo Paulista",
+                "icon": "icon-weather-pouring",
+                "temp": {
+                    "C": "22",
+                    "F": "72"
+                },
+                "windSpeed": {
+                    "KMH": 12,
+                    "MPH": 7.5
+                },
+                "windDirection": "NW",
+                "rainProbability": "98%",
+                "next3Days": [
+                    {
+                        "name": "Sunday",
+                        "icon": "icon-weather-pouring",
+                        "temp": {
+                            "C": "21",
+                            "F": "70"
+                        }
+                    },
+                    {
+                        "name": "Sunday",
+                        "icon": "icon-weather-pouring",
+                        "temp": {
+                            "C": "19",
+                            "F": "66"
+                        }
+                    },
+                    {
+                        "name": "Tuesday",
+                        "icon": "icon-weather-partlycloudy",
+                        "temp": {
+                            "C": "24",
+                            "F": "75"
+                        }
+                    }
+                ]
+            }
+        },
+        "currentLocation": "Campo Limpo Paulista",
+        "tempUnit": "C",
+        "speedUnit": "KMH"
+    }
+}

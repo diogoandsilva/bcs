@@ -1,0 +1,13 @@
+{
+    "COMINGSOON": {
+        "TITLE": "Hey! Obrigado por nos visitar",
+        "SUBTITLE": "O sistema não está pronto ainda, porém a data de lançamento está prevista para daqui:",
+        "DAYS": "dias",
+        "HOURS": "horas",
+        "MINUTES": "minutos",
+        "SECONDS": "segundos",
+        "MESSAGE": "If you would like to be notified when the app is ready, you can subscribe to our e-mail list.",
+        "EMAIL_ADRESS": "Email",
+        "SUBSCRIBE": "SUBSCRIBE"
+    }
+}

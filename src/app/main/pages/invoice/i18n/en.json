@@ -1,0 +1,22 @@
+{
+    "INVOICE": {
+        "CLIENT": "CLIENT",
+        "PHONE": "Cel",
+        "EMAIL": "Email",
+        "WEB": "Web",
+        "INVOICE": "OCORRÊNCIA",
+        "INVOICE_DATE": "DATA OCORRÊNCIA",
+        "DUE_DATE": "DUE DATE",
+        "TOTAL_DUE": "TOTAL DUE",
+        "SERVICE": "DESCRIÇÃO",
+        "UNIT": "SEQ",
+        "UNIT_PRICE": "UNIT PRICE",
+        "QUANTITY": "QUANTITY",
+        "TOTAL": "TOTAL",
+        "SUBTOTAL": "SUBTOTAL",
+        "TAX": "TAX",
+        "DISCOUNT": "DISCOUNT",
+        "NOTE": "Please pay within 15 days. Thank you for your business.",
+        "SMALL_NOTE": "Conforme as cameras do monitoramento do veiculo, segue a ocorrência abaixo:"
+    }
+}
