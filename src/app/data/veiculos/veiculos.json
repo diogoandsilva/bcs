@@ -1,0 +1,18 @@
+{
+    "widget11": {
+        "title": "Veículos",
+        "table": {
+            "columns": [
+                {
+                    "title": "Prefixo"
+                },
+                {
+                    "title": "Placa"
+                },
+                {
+                    "title": "Garagem"
+                }
+            ]
+        }
+    }
+}

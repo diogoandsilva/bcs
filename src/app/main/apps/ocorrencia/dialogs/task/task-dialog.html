@@ -10,24 +10,42 @@
         </md-toolbar>
 
         <md-dialog-content ms-scroll>
-            <md-input-container class="md-block">
-                <label translate="TODO.TITLE">Titulo</label>
-                <input name="title" ng-model="vm.task.title" required md-autofocus>
+            <md-input-container class="md-block" flex-gt-sm="">
+                <label translate="TODO.TITLE">Tipo de Ocorrência</label>
+                <md-select ng-model="vm.task.title" md-autofocus>
+                  <md-option ng-repeat="tipo in vm.tipos" value="{{tipo.descricao}}">
+                    {{tipo.descricao}}
+                  </md-option>
+                </md-select>
                 <div ng-messages="taskForm.title.$error" ng-show="taskForm.title.$touched" role="alert">
                     <div ng-message="required">
-                        <span translate="TODO.ERRORS.TITLE_REQUIRED">Title field is required</span>
+                        <span translate="TODO.ERRORS.TITLE_REQUIRED">Tipo de Ocorrência é necessário.</span>
                     </div>
                 </div>
             </md-input-container>
 
-            <div class="tags">
-                <label translate="TODO.TAGS">Tags</label>
-                <md-chips ng-model="vm.task.tags" md-transform-chip="vm.newTag($chip)">
-                    <md-chip-template>
-                        <span ng-if="$chip.color" class="color" ng-style="{'background-color':$chip.color}"></span>
-                        <span>{{$chip.label}}</span>
-                    </md-chip-template>
-                </md-chips>
+            <div layout-xs="column" layout="row">
+                <div flex class="info-container">
+                    <md-input-container class="md-block" flex-gt-sm="">
+                      <label>Veículo</label>
+                      <md-select ng-model="vm.task.veiculo">
+                        <md-option ng-repeat="veiculo in vm.veiculos" value="{{veiculo.descricao}}">
+                          {{veiculo.identificador}}
+                        </md-option>
+                      </md-select>
+                    </md-input-container>
+                </div>
+
+                <div flex class="info-container">
+                    <md-input-container class="md-block" flex-gt-sm="">
+                      <label>Estado</label>
+                      <md-select ng-model="vm.task.estado">
+                        <md-option ng-repeat="tipo in vm.tipos" value="{{tipo.descricao}}">
+                          {{tipo.descricao}}
+                        </md-option>
+                      </md-select>
+                    </md-input-container>
+                </div>
             </div>
 
             <div layout-xs="column" layout="row">

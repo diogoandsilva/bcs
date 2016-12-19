@@ -1,0 +1,84 @@
+<div id="veiculos" class="page-layout simple right-sidenav" layout="row">
+
+    <!-- CENTER -->
+    <div class="center" flex ms-scroll>
+
+
+        <!-- HEADER -->
+        <div class="header md-accent-bg" layout="column" layout-align="space-between">
+
+            <div layout="row">
+                <div class="selected-project">{{vm.selectedGaragem.nome}}</div>
+
+                <md-menu id="projects-menu" md-offset="0 48">
+                    <md-button class="md-icon-button project-selector" ng-click="$mdOpenMenu()"
+                               aria-label="Selecione a garagem" md-menu-origin md-menu-align-target>
+                        <md-icon md-font-icon="icon-dots-horizontal"></md-icon>
+                    </md-button>
+
+                    <md-menu-content width="3" class="md-background-bg">
+                        <md-menu-item ng-repeat="garagem in vm.garagens">
+                            <md-button ng-click="vm.selectGaragem(garagem)" aria-label="{{garagem.nome}}">
+                                <span ng-class="{'secondary-text': vm.selectedGaragem == garagem}">{{garagem.nome}}</span>
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+        </div>
+        <!-- / HEADER -->
+
+        <!-- CONTENT -->
+        <div class="content">
+
+
+          <!-- WIDGET GROUP -->
+          <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+              <!-- WIDGET 11 -->
+              <ms-widget layout="row" flex="100">
+
+                  <!-- Front -->
+                  <ms-widget-front class="white-bg">
+
+                      <div class="p-24 mb-8 border-bottom" layout="row" layout-align="space-between center">
+                          <div class="h2">{{vm.widget11.title}}</div>
+                          <div class="text-boxed red-bg white-fg m-0">{{vm.widget11.table.rows.length}}
+                              Veículos
+                          </div>
+                      </div>
+
+                      <table class="dataTable row-border hover" datatable="ng" dt-options="vm.widget11.dtOptions" dt-instance="vm.widget11.dtInstance">
+                          <thead>
+                              <tr>
+                                  <th class="secondary-text" ng-repeat="column in ::vm.widget11.table.columns">
+                                      <div class="table-header">
+                                          <span class="column-title">{{column.title}}</span>
+                                      </div>
+                                  </th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr ng-repeat="veiculo in vm.widget11.table.rows">
+                                <td>{{ veiculo.identificador }}</td>
+                                <td>{{ veiculo.placa }}</td>
+                                <td>{{ veiculo.Garagem.nome }}</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </ms-widget-front>
+                  <!-- / Front -->
+
+              </ms-widget>
+              <!-- / WIDGET 11 -->
+
+          </div>
+          <!-- / WIDGET GROUP -->
+
+        </div>
+        <!-- / CONTENT -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>

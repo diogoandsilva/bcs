@@ -39,6 +39,7 @@
             //'app.contacts',
             'app.notes',
             'app.users',
+            'app.veiculos',
             // Pages
             'app.pages',
 

@@ -3,50 +3,44 @@
     'use strict';
 
     angular
-        .module('app.ocorrencia')
-        .controller('TaskDialogController', TaskDialogController);
+        .module('app.veiculos')
+        .controller('VeiculoDialogController', VeiculoDialogController);
 
     /** @ngInject */
-    function TaskDialogController($mdDialog, Task, Tasks, event, api)
+    function VeiculoDialogController($mdDialog, Veiculo, Veiculos, event, api)
     {
         var vm = this;
 
+        console.log(Veiculo);
+
         // Data
-        vm.title = 'Editar Ocorrência';
-        vm.task = angular.copy(Task);
-        vm.tasks = Tasks;
-        vm.newTask = false;
+        vm.title = 'Editar Veículo';
+        vm.veiculo = angular.copy(Veiculo);
+        vm.veiculos = Veiculos;
+        vm.newVeiculo = false;
         var dataOntem = new Date();
         dataOntem.setDate(dataOntem.getDate() - 1);
 
-        if ( !vm.task )
+        if ( !vm.veiculo )
         {
-            vm.task = {
+            vm.veiculo = {
                 'id'                : '',
-                'title'             : '',
-                'veiculo'           : '',
-                'estado'            : '',
-                'notes'             : '',
-
-                'startDate'         : new Date(),
-                'startDateTimeStamp': new Date().getTime(),
-                'dueDate'           : dataOntem,
-                'dueDateTimeStamp'  : dataOntem.getTime(),
-                'completed'         : false,
-                'starred'           : false,
-                'important'         : false,
-                'deleted'           : false,
-                'tags'              : []
+                'identificador'     : '',
+                'placa'             : '',
+                'GaragemId'         : '',
+                'createdAt'         : new Date(),
+                'updatedAt'         : new Date(),
+                'ativo'             : false
             };
-            vm.title = 'Adicionar Ocorrência';
-            vm.newTask = true;
-            vm.task.tags = [];
+            vm.title = 'Adicionar Veículo';
+            vm.newVeiculo = true;
+            vm.veiculo.tags = [];
         }
 
         // Methods
-        vm.addNewTask = addNewTask;
-        vm.saveTask = saveTask;
-        vm.deleteTask = deleteTask;
+        vm.addNewVeiculo = addNewVeiculo;
+        vm.saveVeiculo = saveVeiculo;
+        vm.deleteVeiculo = deleteVeiculo;
         vm.newTag = newTag;
         vm.closeDialog = closeDialog;
 
@@ -57,26 +51,26 @@
         //////////
 
         /**
-         * Add new task
+         * Add new veiculo
          */
-        function addNewTask()
+        function addNewVeiculo()
         {
-            vm.tasks.unshift(vm.task);
+            vm.veiculos.unshift(vm.veiculo);
 
             closeDialog();
         }
 
         /**
-         * Save task
+         * Save veiculo
          */
-        function saveTask()
+        function saveVeiculo()
         {
             // Dummy save action
-            for ( var i = 0; i < vm.tasks.length; i++ )
+            for ( var i = 0; i < vm.veiculos.length; i++ )
             {
-                if ( vm.tasks[i].id === vm.task.id )
+                if ( vm.veiculos[i].id === vm.veiculo.id )
                 {
-                    vm.tasks[i] = angular.copy(vm.task);
+                    vm.veiculos[i] = angular.copy(vm.veiculo);
                     break;
                 }
             }
@@ -85,14 +79,14 @@
         }
 
         /**
-         * Delete task
+         * Delete veiculo
          */
-        function deleteTask()
+        function deleteVeiculo()
         {
             var confirm = $mdDialog.confirm()
                 .title('Tem certeza?')
-                .content('Essa ocorrência será excluída.')
-                .ariaLabel('Excluir Ocorrência')
+                .content('Esse veículo será excluído.')
+                .ariaLabel('Excluir Veículo')
                 .ok('Deletar')
                 .cancel('Cancelar')
                 .targetEvent(event);
@@ -100,11 +94,11 @@
             $mdDialog.show(confirm).then(function ()
             {
                 // Dummy delete action
-                for ( var i = 0; i < vm.tasks.length; i++ )
+                for ( var i = 0; i < vm.veiculos.length; i++ )
                 {
-                    if ( vm.tasks[i].id === vm.task.id )
+                    if ( vm.veiculos[i].id === vm.veiculo.id )
                     {
-                        vm.tasks[i].deleted = true;
+                        vm.veiculos[i].deleted = true;
                         break;
                     }
                 }

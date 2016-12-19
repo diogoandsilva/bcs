@@ -1,0 +1,81 @@
+<md-dialog class="veiculo-dialog" aria-label="Adicionar Veículo">
+    <form name="veiculoForm" class="md-inline-form" novalidate>
+        <md-toolbar class="md-accent md-hue-2">
+            <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+                <span class="title">{{vm.title}}</span>
+                <md-button class="md-icon-button" ng-click="vm.closeDialog()">
+                    <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content ms-scroll>
+
+            <md-input-container class="md-block">
+                <label>Prefixo</label>
+                <input name="identificador" ng-model="vm.veiculo.identificador" required md-autofocus>
+                <div ng-messages="veiculoForm.identificador.$error" ng-show="veiculoForm.identificador.$touched" role="alert">
+                    <div ng-message="required">
+                        <span>É necessário informar um prefixo para o veículo.</span>
+                    </div>
+                </div>
+            </md-input-container>
+
+            <div layout-xs="column" layout="row">
+                <div flex class="info-container">
+                    <md-input-container class="md-block" flex-gt-sm="">
+                      <label>Veículo</label>
+                      <md-select ng-model="vm.veiculo.veiculo">
+                        <md-option ng-repeat="veiculo in vm.veiculos" value="{{veiculo.descricao}}">
+                          {{veiculo.identificador}}
+                        </md-option>
+                      </md-select>
+                    </md-input-container>
+                </div>
+
+                <div flex class="info-container">
+                    <md-input-container class="md-block" flex-gt-sm="">
+                      <label>Estado</label>
+                      <md-select ng-model="vm.veiculo.estado">
+                        <md-option ng-repeat="tipo in vm.tipos" value="{{tipo.descricao}}">
+                          {{tipo.descricao}}
+                        </md-option>
+                      </md-select>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div class="notes">
+                <label translate="TODO.NOTES">Descrição</label>
+                <text-angular ng-model="vm.veiculo.notes"></text-angular>
+            </div>
+
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row" layout-align="space-between center">
+            <div layout="row" layout-align="start center">
+                <md-button type="submit" ng-if="!vm.newVeiculo" ng-click="vm.saveVeiculo()"
+                           class="send-button md-accent md-raised"
+                           ng-disabled="veiculoForm.$invalid || veiculoForm.$pristine"
+                           aria-label="SAVE" translate="TODO.SAVE" translate-attr-aria-label="TODO.SAVE">
+                    SAVE
+                </md-button>
+
+                <md-button type="submit" ng-if="vm.newVeiculo" ng-click="vm.addNewVeiculo()"
+                           class="send-button md-accent md-raised"
+                           ng-disabled="veiculoForm.$invalid || veiculoForm.$pristine"
+                           aria-label="Add Veiculo" translate="TODO.ADD_TASK" translate-attr-aria-label="TODO.ADD_TASK">
+                    ADD TASK
+                </md-button>
+            </div>
+
+            <div layout="row">
+                <md-button class="md-icon-button" ng-click="vm.deleteVeiculo($event)" aria-label="Delete" translate
+                           translate-attr-aria-label="TODO.DELETE">
+                    <md-icon md-font-icon="icon-delete"></md-icon>
+                    <md-tooltip><span translate="TODO.DELETE">DELETE</span></md-tooltip>
+                </md-button>
+            </div>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

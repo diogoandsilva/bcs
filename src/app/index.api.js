@@ -23,8 +23,27 @@
                       };
                       */
       api.usuarios = $resource(api.baseUrl + 'usuarios', {}, {
-               'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
-            });
+         'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
+      });
+      api.ocorrenciaTipo = $resource(api.baseUrl + 'ocorrenciaTipos', {}, {
+         'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
+      });
+      api.veiculo = $resource(api.baseUrl + 'veiculos', {garagemId: '@garagemId'}, {
+         'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
+      });
+      api.garagem = {
+          list : $resource(api.baseUrl + 'garagem', {
+              method: 'GET',
+              isArray: true,
+              headers: { Authorization: token }
+          }),
+          getById : $resource(api.baseUrl + 'garagem/:id', {id: '@id'}, {
+              method: 'GET',
+              headers: { Authorization: token }
+          })
+      };
+
+      api.getBlogList = $resource('http://api.example.com/getBlogList');
         /**
          * You can use this service to define your API urls. The "api" service
          * is designed to work in parallel with "apiResolver" service which you can
