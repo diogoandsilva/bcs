@@ -27,7 +27,7 @@
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages', {
-            title : 'PAGES',
+            title : 'ADICIONAIS',
             group : true,
             weight: 2
         });

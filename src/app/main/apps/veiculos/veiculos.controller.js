@@ -19,6 +19,7 @@
         api.garagem.getById.get({id:1},function(garagem){
            vm.selectedGaragem = garagem;
            api.veiculo.list({garagemId: garagem.id},function(veiculos) {
+             console.log(veiculos);
              vm.widget11.table.rows = veiculos;
            });
         });

@@ -14,6 +14,7 @@
         // Data
         vm.title = 'Editar Ocorrência';
         vm.task = angular.copy(Task);
+        console.log(Task);
         vm.tasks = Tasks;
         vm.newTask = false;
         var dataOntem = new Date();

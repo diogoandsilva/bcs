@@ -11,12 +11,14 @@
     {
         var vm = this;
 
+        console.log("OI eu sou o goku");
         console.log(Veiculo);
 
         // Data
         vm.title = 'Editar Veículo';
         vm.veiculo = angular.copy(Veiculo);
         vm.veiculos = Veiculos;
+
         vm.newVeiculo = false;
         var dataOntem = new Date();
         dataOntem.setDate(dataOntem.getDate() - 1);
