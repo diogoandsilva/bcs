@@ -23,7 +23,7 @@
         });
 
         msNavigationServiceProvider.saveItem('apps.dashboards', {
-            title : 'Setores',
+            title : 'Dashboards',
             icon  : 'icon-tile-four',
             weight: 1
         });

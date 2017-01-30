@@ -41,8 +41,8 @@
                 order     : [0, 'asc'],
                 columnDefs: [
                     {
-                        width  : '33%',
-                        targets: [0, 1, 2]
+                        width  : '25%',
+                        targets: [0, 1, 2, 3]
                     }
                 ],
                 rowCallback: rowCallback

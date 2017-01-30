@@ -31,6 +31,16 @@
       api.veiculo = $resource(api.baseUrl + 'veiculos', {garagemId: '@garagemId'}, {
          'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
       });
+
+      api.ocorrencias = $resource(api.baseUrl + 'ocorrencias', {garagemId: '@garagemId'}, {
+         'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
+      });
+
+      api.ocorrencia = $resource(api.baseUrl + 'ocorrencia/:id', {id: '@id'}, {
+         'getById' : {method: 'GET', headers: { Authorization: token }},
+         'list' : {method: 'GET', isArray: true, headers: { Authorization: token }}
+      });
+
       api.garagem = {
           list : $resource(api.baseUrl + 'garagem', {
               method: 'GET',

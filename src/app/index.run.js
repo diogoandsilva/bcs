@@ -1,3 +1,7 @@
+
+
+
+
 (function ()
 {
     'use strict';
@@ -7,7 +11,7 @@
         .run(runBlock);
 
     /** @ngInject */
-    function runBlock($http,$rootScope, $timeout, $state, editableThemes)
+    function runBlock($http, $rootScope, $timeout, $state, editableThemes)
     {
         // 3rd Party Dependencies
         editableThemes.default.submitTpl = '<md-button class="md-icon-button" type="submit" aria-label="save"><md-icon md-font-icon="icon-checkbox-marked-circle" class="md-accent-fg md-hue-1"></md-icon></md-button>';
@@ -22,6 +26,7 @@
         // De-activate loading indicator
         var stateChangeSuccessEvent = $rootScope.$on('$stateChangeSuccess', function ()
         {
+            //Fazer o controle de permissoes aqui
             $timeout(function ()
             {
                 $rootScope.loadingProgress = false;

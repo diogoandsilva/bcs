@@ -33,9 +33,16 @@
             bodyClass: 'users'
         });
 
-        msNavigationServiceProvider.saveItem('apps.users', {
+        // Navigation
+        msNavigationServiceProvider.saveItem('cadastros', {
+            title : 'Cadastros',
+            group : true,
+            weight: 1
+        });
+
+        msNavigationServiceProvider.saveItem('cadastros.users', {
             title : 'Usuarios',
-            icon  : 'icon-checkbox-marked',
+            icon  : 'icon-account',
             state : 'app.users',
             /*badge : {
                 content: 3,
@@ -45,7 +52,7 @@
             weight: 9
         });
 
-        msNavigationServiceProvider.saveItem('apps.users', {
+        msNavigationServiceProvider.saveItem('cadastros.users', {
             title: 'Usuarios',
             state: 'app.users'
         });

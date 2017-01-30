@@ -3,11 +3,11 @@
     'use strict';
 
     angular
-        .module('app.ocorrencia')
-        .controller('OcorrenciaController', OcorrenciaController);
+        .module('app.monitorados')
+        .controller('MonitoradosController', MonitoradosController);
 
     /** @ngInject */
-    function OcorrenciaController($document, $mdDialog, $mdSidenav, Tasks, Tags)
+    function MonitoradosController($document, $mdDialog, $mdSidenav, Tasks, Tags)
     {
         var vm = this;
 
@@ -112,9 +112,9 @@
         function openTaskDialog(ev, task)
         {
             $mdDialog.show({
-                controller         : 'OcorrenciaDialogController',
+                controller         : 'TaskDialogController',
                 controllerAs       : 'vm',
-                templateUrl        : 'app/main/apps/ocorrencia/dialogs/task/task-dialog.html',
+                templateUrl        : 'app/main/apps/monitorados/dialogs/task/task-dialog.html',
                 parent             : angular.element($document.body),
                 targetEvent        : ev,
                 clickOutsideToClose: true,

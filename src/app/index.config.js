@@ -12,7 +12,7 @@
         .config(function($httpProvider) {
           $httpProvider.interceptors.push('authInterceptor');
         });
-      
+
         /** @ngInject */
         function dateConfig($mdDateLocaleProvider) {
 
@@ -49,7 +49,7 @@
             },
 
             response: function(res) {
-              if(res.config.url.indexOf(API_LOGIN) === 0 && res.data.token) {
+              if(res.config.url.indexOf(API_LOGIN) === 0 && res.data.token) { //fazendo login
                 auth.saveToken(res.data.token);
               }
               return res;

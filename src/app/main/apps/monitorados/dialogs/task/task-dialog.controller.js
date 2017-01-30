@@ -4,44 +4,30 @@
 
     angular
         .module('app.ocorrencia')
-        .controller('OcorrenciaDialogController', OcorrenciaDialogController);
+        .controller('TaskDialogController', TaskDialogController);
 
     /** @ngInject */
-    function OcorrenciaDialogController($mdDialog, Task, Tasks, event, api)
+    function TaskDialogController($mdDialog, Task, Tasks, event, api)
     {
         var vm = this;
-
-        //test like a fuck
-
-        api.ocorrencia.getById({id:1},function(oc){
-          console.log(oc);
-        });
 
         // Data
         vm.title = 'Editar Ocorrência';
         vm.task = angular.copy(Task);
-        console.log(Task);
         vm.tasks = Tasks;
         vm.newTask = false;
         var dataOntem = new Date();
         dataOntem.setDate(dataOntem.getDate() - 1);
-        var veiculos;
-        api.veiculo.list({garagemId: 1},function(vs) {
-          veiculos = veiculos;
-        });
-        var garagens;
-        //api.garagem.list(function(gs) {
-          //garagens = gs;
-        //});
 
         if ( !vm.task )
         {
             vm.task = {
                 'id'                : '',
                 'title'             : '',
-                'veiculo'           : veiculos,
-                'garagem'           : garagens,
-                'descricao'             : '',
+                'veiculo'           : '',
+                'estado'            : '',
+                'notes'             : '',
+
                 'startDate'         : new Date(),
                 'startDateTimeStamp': new Date().getTime(),
                 'dueDate'           : dataOntem,
@@ -49,7 +35,7 @@
                 'completed'         : false,
                 'starred'           : false,
                 'important'         : false,
-                'ativo'             : true,
+                'deleted'           : false,
                 'tags'              : []
             };
             vm.title = 'Adicionar Ocorrência';
@@ -65,8 +51,7 @@
         vm.closeDialog = closeDialog;
 
         vm.tipos = api.ocorrenciaTipo.list(function() {});
-        vm.veiculos = api.veiculo.list({garagemId: 1},function() {});
-        //vm.garagens = api.garagem.list(function() {});
+        vm.veiculos = api.veiculo.list(function() {});
 
 
         //////////

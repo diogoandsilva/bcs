@@ -11,7 +11,6 @@
     {
         var vm = this;
 
-        console.log("OI eu sou o goku");
         console.log(Veiculo);
 
         // Data
@@ -43,7 +42,6 @@
         vm.addNewVeiculo = addNewVeiculo;
         vm.saveVeiculo = saveVeiculo;
         vm.deleteVeiculo = deleteVeiculo;
-        vm.newTag = newTag;
         vm.closeDialog = closeDialog;
 
         vm.tipos = api.ocorrenciaTipo.list(function() {});
@@ -108,24 +106,6 @@
             {
                 // Cancel Action
             });
-        }
-
-
-        /**
-         * New tag
-         *
-         * @param chip
-         * @returns {{label: *, color: string}}
-         */
-        function newTag(chip)
-        {
-            var tagColors = ['#388E3C', '#F44336', '#FF9800', '#0091EA', '#9C27B0'];
-
-            return {
-                name : chip,
-                label: chip,
-                color: tagColors[Math.floor(Math.random() * (tagColors.length))]
-            };
         }
 
         /**

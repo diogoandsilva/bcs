@@ -40,7 +40,7 @@
 
         // Navigation
         msNavigationServiceProvider.saveItem('apps.file-manager', {
-            title : 'File Manager',
+            title : 'Arquivos',
             icon  : 'icon-folder',
             state : 'app.file-manager',
             weight: 6

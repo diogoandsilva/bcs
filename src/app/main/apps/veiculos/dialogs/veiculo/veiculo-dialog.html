@@ -22,32 +22,18 @@
             </md-input-container>
 
             <div layout-xs="column" layout="row">
+            
+
                 <div flex class="info-container">
                     <md-input-container class="md-block" flex-gt-sm="">
-                      <label>Veículo</label>
-                      <md-select ng-model="vm.veiculo.veiculo">
-                        <md-option ng-repeat="veiculo in vm.veiculos" value="{{veiculo.descricao}}">
-                          {{veiculo.identificador}}
+                      <label>Garagem</label>
+                      <md-select ng-model="vm.veiculo.garagem">
+                        <md-option ng-repeat="garagem in vm.garagens" value="{{veiculo.garagem}}">
+                          {{veiculo.garagem}}
                         </md-option>
                       </md-select>
                     </md-input-container>
                 </div>
-
-                <div flex class="info-container">
-                    <md-input-container class="md-block" flex-gt-sm="">
-                      <label>Estado</label>
-                      <md-select ng-model="vm.veiculo.estado">
-                        <md-option ng-repeat="tipo in vm.tipos" value="{{tipo.descricao}}">
-                          {{tipo.descricao}}
-                        </md-option>
-                      </md-select>
-                    </md-input-container>
-                </div>
-            </div>
-
-            <div class="notes">
-                <label translate="TODO.NOTES">Descrição</label>
-                <text-angular ng-model="vm.veiculo.notes"></text-angular>
             </div>
 
         </md-dialog-content>

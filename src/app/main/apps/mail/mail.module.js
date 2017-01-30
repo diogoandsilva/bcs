@@ -71,7 +71,7 @@
         msApiProvider.register('mail.folder.starred', ['app/data/mail/folders/starred.json']);
         msApiProvider.register('mail.folder.important', ['app/data/mail/folders/important.json']);
 
-        /*
+
         // Navigation
         msNavigationServiceProvider.saveItem('apps.mail', {
             title      : 'Mail',
@@ -86,6 +86,6 @@
             },
             weight     : 4
         });
-        */
+        
     }
 })();

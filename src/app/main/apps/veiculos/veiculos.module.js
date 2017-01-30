@@ -33,9 +33,9 @@
             bodyClass: 'veiculos'
         });
 
-        msNavigationServiceProvider.saveItem('apps.veiculos', {
+        msNavigationServiceProvider.saveItem('cadastros.veiculos', {
             title : 'Veículos',
-            icon  : 'icon-checkbox-marked',
+            icon  : 'icon-bus',
             state : 'app.veiculos',
             /*badge : {
                 content: 3,
@@ -45,7 +45,7 @@
             weight: 9
         });
 
-        msNavigationServiceProvider.saveItem('apps.veiculos', {
+        msNavigationServiceProvider.saveItem('cadastros.veiculos', {
             title: 'Veículos',
             state: 'app.veiculos'
         });

@@ -70,7 +70,7 @@
                 opened   : '',
                 created  : moment().format('MMMM D, YYYY'),
                 extention: '',
-                location : 'My Files > Documents',
+                location : 'Meus Arquivos > Ocorrencias',
                 offline  : false,
                 preview  : 'assets/images/etc/sample-file-preview.jpg'
             };

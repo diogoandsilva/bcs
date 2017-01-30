@@ -11,7 +11,7 @@
 
         <md-dialog-content ms-scroll>
             <md-input-container class="md-block" flex-gt-sm="">
-                <label translate="OCORRENCIA.TITLE">Tipo de Ocorrência</label>
+                <label translate="TODO.TITLE">Tipo de Ocorrência</label>
                 <md-select ng-model="vm.task.title" md-autofocus>
                   <md-option ng-repeat="tipo in vm.tipos" value="{{tipo.descricao}}">
                     {{tipo.descricao}}
@@ -19,22 +19,22 @@
                 </md-select>
                 <div ng-messages="taskForm.title.$error" ng-show="taskForm.title.$touched" role="alert">
                     <div ng-message="required">
-                        <span translate="OCORRENCIA.ERRORS.TITLE_REQUIRED">Tipo de Ocorrência é necessário.</span>
+                        <span translate="TODO.ERRORS.TITLE_REQUIRED">Tipo de Ocorrência é necessário.</span>
                     </div>
                 </div>
             </md-input-container>
 
             <div layout-xs="column" layout="row">
-              <div flex class="info-container">
-                  <md-input-container class="md-block" flex-gt-sm="">
-                    <label>Veículo</label>
-                    <md-select ng-model="vm.task.veiculo">
-                      <md-option ng-repeat="veiculo in vm.veiculos" value="{{veiculo.identificador}}">
-                        {{veiculo.identificador}}
-                      </md-option>
-                    </md-select>
-                  </md-input-container>
-              </div>
+                <div flex class="info-container">
+                    <md-input-container class="md-block" flex-gt-sm="">
+                      <label>Veículo</label>
+                      <md-select ng-model="vm.task.veiculo">
+                        <md-option ng-repeat="veiculo in vm.veiculos" value="{{veiculo.descricao}}">
+                          {{veiculo.identificador}}
+                        </md-option>
+                      </md-select>
+                    </md-input-container>
+                </div>
 
                 <div flex class="info-container">
                     <md-input-container class="md-block" flex-gt-sm="">
@@ -50,18 +50,18 @@
 
             <div layout-xs="column" layout="row">
                 <div flex class="date-container">
-                    <label translate="OCORRENCIA.START_DATE">Start Date</label>
+                    <label translate="TODO.START_DATE">Start Date</label>
                     <md-datepicker flex ng-model="vm.task.startDate" md-placeholder="Start Date" required></md-datepicker>
                 </div>
 
                 <div flex class="date-container">
-                    <label translate="OCORRENCIA.DUE_DATE">Due Date</label>
+                    <label translate="TODO.DUE_DATE">Due Date</label>
                     <md-datepicker flex ng-model="vm.task.dueDate" md-placeholder="Due Date" required></md-datepicker>
                 </div>
             </div>
 
             <div class="notes">
-                <label translate="OCORRENCIA.NOTES">Descrição</label>
+                <label translate="TODO.NOTES">Descrição</label>
                 <text-angular ng-model="vm.task.notes"></text-angular>
             </div>
 
@@ -84,7 +84,7 @@
                     </div>
 
                     <md-button class="md-icon-button" aria-label="Delete attachment" translate
-                               translate-attr-aria-label="OCORRENCIA.DELETE_ATTACHMENT">
+                               translate-attr-aria-label="TODO.DELETE_ATTACHMENT">
                         <md-icon md-font-icon="icon-close" class="s16"></md-icon>
                     </md-button>
                 </div>
@@ -96,33 +96,33 @@
                 <md-button type="submit" ng-if="!vm.newTask" ng-click="vm.saveTask()"
                            class="send-button md-accent md-raised"
                            ng-disabled="taskForm.$invalid || taskForm.$pristine"
-                           aria-label="SAVE" translate="OCORRENCIA.SAVE" translate-attr-aria-label="OCORRENCIA.SAVE">
+                           aria-label="SAVE" translate="TODO.SAVE" translate-attr-aria-label="TODO.SAVE">
                     SAVE
                 </md-button>
 
                 <md-button type="submit" ng-if="vm.newTask" ng-click="vm.addNewTask()"
                            class="send-button md-accent md-raised"
                            ng-disabled="taskForm.$invalid || taskForm.$pristine"
-                           aria-label="Add Task" translate="OCORRENCIA.ADD_TASK" translate-attr-aria-label="OCORRENCIA.ADD_TASK">
+                           aria-label="Add Task" translate="TODO.ADD_TASK" translate-attr-aria-label="TODO.ADD_TASK">
                     ADD TASK
                 </md-button>
 
                 <md-button class="md-icon-button" aria-label="Attach file" translate
-                           translate-attr-aria-label="OCORRENCIA.ATTACH_FILE">
+                           translate-attr-aria-label="TODO.ATTACH_FILE">
                     <md-icon md-font-icon="icon-paperclip"></md-icon>
                 </md-button>
 
                 <md-button class="md-icon-button" aria-label="Insert picture" translate
-                           translate-attr-aria-label="OCORRENCIA.INSERT_PICTURE">
+                           translate-attr-aria-label="TODO.INSERT_PICTURE">
                     <md-icon md-font-icon="icon-file-image-box"></md-icon>
                 </md-button>
             </div>
 
             <div layout="row">
                 <md-button class="md-icon-button" ng-click="vm.deleteTask($event)" aria-label="Delete" translate
-                           translate-attr-aria-label="OCORRENCIA.DELETE">
+                           translate-attr-aria-label="TODO.DELETE">
                     <md-icon md-font-icon="icon-delete"></md-icon>
-                    <md-tooltip><span translate="OCORRENCIA.DELETE">DELETE</span></md-tooltip>
+                    <md-tooltip><span translate="TODO.DELETE">DELETE</span></md-tooltip>
                 </md-button>
             </div>
         </md-dialog-actions>
