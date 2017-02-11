@@ -49,7 +49,7 @@
 
         // Translation
         $translatePartialLoaderProvider.addPart('app/main/apps/gantt-chart');
-        /*
+        
 
         // Navigation
         msNavigationServiceProvider.saveItem('apps.gantt-chart', {
@@ -58,7 +58,7 @@
             state : 'app.gantt-chart',
             weight: 7
         });
-        */
+
 
         // Api
         msApiProvider.register('ganttChart.tasks', ['app/data/gantt-chart/tasks.json']);

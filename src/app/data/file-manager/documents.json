@@ -1,12 +1,12 @@
 {
     "data": {
         "path":[
-          "My Files",
-          "Documents"
+          "Arquivos",
+          "Videos"
         ],
         "folders": [
             {
-                "name": "Work Documents",
+                "name": "Secretos",
                 "type": "folder",
                 "owner": "me",
                 "size": "",
@@ -18,7 +18,7 @@
                 "offline": true
             },
             {
-                "name": "Public Documents",
+                "name": "Fotos",
                 "type": "folder",
                 "owner": "public",
                 "size": "",
@@ -30,7 +30,7 @@
                 "offline": true
             },
             {
-                "name": "Private Documents",
+                "name": "Ocorrências",
                 "type": "folder",
                 "owner": "me",
                 "size": "",
@@ -44,10 +44,10 @@
         ],
         "files": [
             {
-                "name": "Ongoing projects",
-                "type": "document",
-                "owner": "Emily Bennett",
-                "size": "1.2 Mb",
+                "name": "Ocorrencia 1.avi",
+                "type": "video",
+                "owner": "Diogo Andrade",
+                "size": "300.2 Mb",
                 "modified": "July 8, 2015",
                 "opened": "July 8, 2015",
                 "created": "July 8, 2015",
@@ -57,10 +57,10 @@
                 "preview": "assets/images/etc/sample-file-preview.jpg"
             },
             {
-                "name": "Shopping list",
-                "type": "document",
-                "owner": "Emily Bennett",
-                "size": "980 Kb",
+                "name": "Ocorrencia 2.avi",
+                "type": "video",
+                "owner": "Diogo Andrade",
+                "size": "300.2 Mb",
                 "modified": "July 8, 2015",
                 "opened": "July 8, 2015",
                 "created": "July 8, 2015",
@@ -70,10 +70,10 @@
                 "preview": "assets/images/etc/sample-file-preview.jpg"
             },
             {
-                "name": "Invoices",
-                "type": "spreadsheet",
-                "owner": "Emily Bennett",
-                "size": "750 Kb",
+                "name": "Ocorrencia 3.avi",
+                "type": "video",
+                "owner": "Diogo Andrade",
+                "size": "300.2 Mb",
                 "modified": "July 8, 2015",
                 "opened": "July 8, 2015",
                 "created": "July 8, 2015",
@@ -83,10 +83,10 @@
                 "preview": "assets/images/etc/sample-file-preview.jpg"
             },
             {
-                "name": "Crash logs",
-                "type": "document",
-                "owner": "Emily Bennett",
-                "size": "980 Mb",
+                "name": "Ocorrencia 4.avi",
+                "type": "video",
+                "owner": "Diogo Andrade",
+                "size": "300.2 Mb",
                 "modified": "July 8, 2015",
                 "opened": "July 8, 2015",
                 "created": "July 8, 2015",
@@ -96,10 +96,10 @@
                 "preview": "assets/images/etc/sample-file-preview.jpg"
             },
             {
-                "name": "System logs",
-                "type": "document",
-                "owner": "Emily Bennett",
-                "size": "52 Kb",
+                "name": "Ocorrencia 5.avi",
+                "type": "video",
+                "owner": "Diogo Andrade",
+                "size": "300.2 Mb",
                 "modified": "July 8, 2015",
                 "opened": "July 8, 2015",
                 "created": "July 8, 2015",
@@ -109,10 +109,10 @@
                 "preview": "assets/images/etc/sample-file-preview.jpg"
             },
             {
-                "name": "Prices",
-                "type": "spreadsheet",
-                "owner": "Emily Bennett",
-                "size": "27 Mb",
+                "name": "Ocorrencia 6.avi",
+                "type": "video",
+                "owner": "Diogo Andrade",
+                "size": "300.2 Mb",
                 "modified": "July 8, 2015",
                 "opened": "July 8, 2015",
                 "created": "July 8, 2015",
@@ -122,10 +122,10 @@
                 "preview": "assets/images/etc/sample-file-preview.jpg"
             },
             {
-                "name": "Anabelle Manual",
-                "type": "document",
-                "owner": "Emily Bennett",
-                "size": "1.1 Kb",
+                "name": "Ocorrencia 7.avi",
+                "type": "video",
+                "owner": "Diogo Andrade",
+                "size": "300.2 Mb",
                 "modified": "July 8, 2015",
                 "opened": "July 8, 2015",
                 "created": "July 8, 2015",
@@ -135,10 +135,10 @@
                 "preview": "assets/images/etc/sample-file-preview.jpg"
             },
             {
-                "name": "Steam summer sale budget",
-                "type": "spreadsheet",
-                "owner": "Emily Bennett",
-                "size": "505 Kb",
+                "name": "Ocorrencia 8.avi",
+                "type": "video",
+                "owner": "Diogo Andrade",
+                "size": "300.2 Mb",
                 "modified": "July 8, 2015",
                 "opened": "July 8, 2015",
                 "created": "July 8, 2015",

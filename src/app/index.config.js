@@ -51,6 +51,7 @@
             response: function(res) {
               if(res.config.url.indexOf(API_LOGIN) === 0 && res.data.token) { //fazendo login
                 auth.saveToken(res.data.token);
+                auth.saveUserName(res.data.userName);
               }
               return res;
             }
@@ -66,8 +67,16 @@
             $window.localStorage['jwtToken'] = token;
           }
 
+          self.saveUserName = function(userName) {
+            $window.localStorage['userName'] = userName;
+          }
+
           self.getToken = function() {
             return $window.localStorage['jwtToken'];
+          }
+
+          self.getUserName = function(userName) {
+            return $window.localStorage['userName'];
           }
         }
 

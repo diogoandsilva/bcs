@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.ocorrencia')
+        .module('app.monitorados')
         .controller('TaskDialogController', TaskDialogController);
 
     /** @ngInject */

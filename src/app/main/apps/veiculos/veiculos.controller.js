@@ -14,7 +14,7 @@
         // Data
         vm.veiculo = Veiculos;
 
-        vm.garagens = api.garagem.list.query({},function(){});
+        vm.garagens = api.garagens.list({},function(){});
         //TODO: Selecionar a garagem do usuario
         api.garagem.getById.get({id:1},function(garagem){
            vm.selectedGaragem = garagem;

@@ -16,12 +16,6 @@
       var token = auth.getToken();
       api.login = $resource('http://127.0.0.1:5000/login',{email: '@email', senha:'@senha' }, {login: { method: 'POST' }});
 
-      /*api.usuarios = {
-                        list: $resource(api.baseUrl + 'usuarios', {}, {headers: { Authorization: 'token' }}),
-                        getById  : $resource(api.baseUrl + 'usuario', {id: '@id'})
-
-                      };
-                      */
       api.usuarios = $resource(api.baseUrl + 'usuarios', {}, {
          'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
       });
@@ -32,28 +26,45 @@
          'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
       });
 
+      api.funcionario = $resource(api.baseUrl + 'funcionarios', {}, {
+         'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
+      });
+
       api.ocorrencias = $resource(api.baseUrl + 'ocorrencias', {garagemId: '@garagemId'}, {
          'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
       });
 
-      api.ocorrencia = $resource(api.baseUrl + 'ocorrencia/:id', {id: '@id'}, {
-         'getById' : {method: 'GET', headers: { Authorization: token }},
-         'list' : {method: 'GET', isArray: true, headers: { Authorization: token }}
-      });
-
-      api.garagem = {
-          list : $resource(api.baseUrl + 'garagem', {
+      api.ocorrencia = {
+          list : $resource(api.baseUrl + 'ocorrencia', {
               method: 'GET',
               isArray: true,
               headers: { Authorization: token }
           }),
+          getById : $resource(api.baseUrl + 'ocorrencia/:id', {id: '@id'}, {
+              method: 'GET',
+              headers: { Authorization: token }
+          })
+      };
+
+      api.garagens = $resource(api.baseUrl + 'garagens', {monitoramentoId: '@monitoramentoId'}, {
+         'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
+      });
+
+      api.garagem = {
           getById : $resource(api.baseUrl + 'garagem/:id', {id: '@id'}, {
               method: 'GET',
               headers: { Authorization: token }
           })
       };
 
-      api.getBlogList = $resource('http://api.example.com/getBlogList');
+      api.monitoramento = {
+          getBytUsuarioId : $resource(api.baseUrl + 'monitoramento/:usuarioId', {usuarioId: '@usuarioId'}, {
+              method: 'GET',
+              headers: { Authorization: token }
+          })
+      };
+
+      //api.getBlogList = $resource('http://api.example.com/getBlogList');
         /**
          * You can use this service to define your API urls. The "api" service
          * is designed to work in parallel with "apiResolver" service which you can

@@ -17,7 +17,7 @@
     {
         // Navigation
         msNavigationServiceProvider.saveItem('apps', {
-            title : 'APPS',
+            title : 'Gerenciais',
             group : true,
             weight: 1
         });

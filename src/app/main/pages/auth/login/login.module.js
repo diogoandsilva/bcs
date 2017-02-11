@@ -28,6 +28,7 @@
         // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/login');
 
+        /*
         // Navigation
         msNavigationServiceProvider.saveItem('pages.auth', {
             title : 'Autenticacao',
@@ -35,11 +36,13 @@
             weight: 1
         });
 
+
         msNavigationServiceProvider.saveItem('pages.auth.login', {
             title : 'Login',
             state : 'app.pages_auth_login',
             weight: 1
         });
+        */
     }
 
 })();

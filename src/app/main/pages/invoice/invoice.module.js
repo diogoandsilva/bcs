@@ -66,6 +66,7 @@
         // Api
         msApiProvider.register('invoice', ['app/data/invoice/invoice.json']);
 
+        /*
         // Navigation
         msNavigationServiceProvider.saveItem('pages.invoice', {
             title : 'Exemplos de Documentos',
@@ -87,6 +88,7 @@
             title : 'Ocorrência',
             state : 'app.pages_invoice_ocorrencia'
         });
+        */
     }
 
 })();

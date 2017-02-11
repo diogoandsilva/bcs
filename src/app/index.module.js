@@ -9,7 +9,7 @@
         .module('fuse', [
 
             // Common 3rd Party Dependencies
-            //'uiGmapgoogle-maps',
+            'uiGmapgoogle-maps',
             'textAngular',
             'xeditable',
 
@@ -31,9 +31,9 @@
             //'app.e-commerce',
             //'app.chat',
             'app.file-manager',
-            //'app.gantt-chart',
+            'app.gantt-chart',
             //'app.scrumboard',
-            'app.ocorrencia',
+            'app.ocorrencias',
             'app.monitorados',
             'app.mail',
             'app.todo',

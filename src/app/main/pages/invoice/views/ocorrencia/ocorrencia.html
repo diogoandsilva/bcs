@@ -71,17 +71,9 @@
 
             <div class="footer" layout="row">
                 <div class="detail"  layout="column">
-                  <div>_____________________________</div>
-                    <div class="title">{{vm.invoice.client.title}}</div>
-                    <div ng-if="vm.invoice.client.address" class="address">Matricula: 2700</div>
-                    <div class="title">Data: 10/10/2016</div>
-                </div>
-
-                <div class="detail-right"  layout="column">
-                    <div>_____________________________</div>
-                    <div class="title">{{vm.invoice.funcionario.title}}</div>
-                    <div ng-if="vm.invoice.client.address" class="address">Matricula: 2700</div>
-                    <div class="title">Data: 10/10/2016</div>
+                  <div>__________________________________________________</div>
+                    <div class="title">{{vm.ocorrencia.funcionario.nome}}</div>
+                    <div class="address">{{vm.ocorrencia.funcionario.matricula}}</div>
                 </div>
 
             </div>

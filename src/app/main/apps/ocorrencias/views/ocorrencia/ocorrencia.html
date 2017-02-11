@@ -1,0 +1,322 @@
+<div id="ocorrencia" class="page-layout simple tabbed" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="start center">
+        <div class="white-fg" layout="row" layout-align="start center" flex>
+            <md-button class="goto-ocorrencias-button md-icon-button" aria-label="Go to ocorrencias"
+                       ng-click="vm.gotoOcorrencias()"
+                       translate translate-attr-aria-label="EC.GO_TO_ORDERS">
+                <md-icon md-font-icon="icon-arrow-left"></md-icon>
+            </md-button>
+
+            <div layout="column" layout-align="start start">
+                <div class="h1">
+                    <span>Ocorrência:</span>
+                    <span>{{vm.ocorrencia.id}}</span>
+                </div>
+
+                <div class="subtitle secondary-text">
+                    <span>{{vm.ocorrencia.monitor.usuario.nome}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <md-button class="md-raised md-background">
+                <span>{{vm.acao}}</span>
+            </md-button>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <md-tabs md-dynamic-height>
+
+          <md-tab>
+              <md-tab-label>
+                  <span>Informações</span>
+              </md-tab-label>
+
+              <md-tab-body>
+                  <div class="ocorrencia-detail-form-container md-background-bg md-whiteframe-1dp">
+                      <form name="taskForm" class="md-inline-form" novalidate>
+                          <md-input-container class="md-block">
+                            <label>Tipo de Ocorrência</label>
+                            <md-select ng-model="vm.ocorrencia.OcorrenciaTipo.descricao" md-autofocus>
+                              <md-option ng-repeat="tipo in vm.ocorrenciaTipos" value="{{tipo.descricao}}">
+                                {{tipo.descricao}}
+                              </md-option>
+                            </md-select>
+                            <div ng-messages="taskForm.title.$error" ng-show="taskForm.title.$touched" role="alert">
+                                <div ng-message="required">
+                                    <span>Tipo de Ocorrência é necessário.</span>
+                                </div>
+                            </div>
+                          </md-input-container>
+
+                          <div layout-xs="column" layout="row">
+                              <div flex class="info-container">
+                                  <md-input-container class="md-block" flex-gt-sm="">
+                                    <label>Veículo</label>
+                                    <md-select ng-model="vm.ocorrencia.Veiculo.identificador">
+                                      <md-option ng-repeat="veiculo in vm.veiculos" value="{{veiculo.identificador}}">
+                                        {{veiculo.identificador}}
+                                      </md-option>
+                                    </md-select>
+                                  </md-input-container>
+                              </div>
+
+                              <div flex class="info-container">
+                                  <md-input-container class="md-block" flex-gt-sm="">
+                                    <label>Garagem</label>
+                                    <md-select ng-model="vm.ocorrencia.Garagem.nome">
+                                      <md-option ng-repeat="garagem in vm.garagens" value="{{garagem.nome}}">
+                                        {{garagem.nome}}
+                                      </md-option>
+                                    </md-select>
+                                  </md-input-container>
+                              </div>
+
+                              <div flex class="info-container">
+                                  <md-input-container class="md-block" flex-gt-sm="">
+                                    <label>Funcionario</label>
+                                    <md-select ng-model="vm.ocorrencia.Funcionario.matricula">
+                                      <md-option ng-repeat="funcionario in vm.funcionarios" value="{{funcionario.matricula}}">
+                                        {{funcionario.matricula}}
+                                      </md-option>
+                                    </md-select>
+                                  </md-input-container>
+                              </div>
+                          </div>
+
+                          <div layout-xs="column" layout="row">
+                              <div flex class="date-container">
+                                  <label>Data Criação</label>
+                                  <md-datepicker flex ng-model="vm.ocorrencia.createdAt" md-placeholder="Data Criação"></md-datepicker>
+                              </div>
+
+                              <div flex class="date-container">
+                                  <label>Data Ocorrência</label>
+                                  <md-datepicker flex ng-model="vm.ocorrencia.dataOcorrencia" md-placeholder="Data Ocorrência"></md-datepicker>
+                              </div>
+
+                              <md-input-container flex class="md-block md-icon-float">
+                                <label>Quantidade</label>
+                                <input type="number" step="1" ng-model="vm.ocorrencia.qtde">
+                              </md-input-container>
+
+                              <div flex class="info-container">
+                                <md-list class="secreto">
+                                    <md-list-item class="secreto">
+                                      <label>Secreto</label>
+                                      <md-switch class="md-secondary" ng-model="vm.ocorrencia.secreto" aria-label="Secreto"></md-switch>
+                                    </md-list-item>
+                                 </md-list>
+                              </div>
+                          </div>
+
+                          <text-angular ta-toolbar="vm.taToolbar" ng-model="vm.ocorrencia.descricao" class="pb-32"></text-angular>
+                      </form>
+                  </div>
+              </md-tab-body>
+          </md-tab>
+
+
+            <md-tab>
+                <md-tab-label>
+                    <span>Localização</span>
+                </md-tab-label>
+
+                <md-tab-body>
+                    <div class="ocorrencia-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <div class="pb-16" layout="row" layout-align="start center">
+                            <md-icon md-font-icon="icon-map" class="m-0 mr-16"></md-icon>
+                            <div class="h2 secondary-text">Mapa</div>
+                        </div>
+
+                        <div class="address">Avenida Dom Pedro, N° 1300, Campo Limpo Paulista - SP</div>
+                        <ui-gmap-google-map center="vm.ocorrencia.endereco.center"
+                                            zoom="vm.ocorrencia.endereco.zoom">
+                            <ui-gmap-marker coords="vm.ocorrencia.endereco.center"
+                                            idkey="vm.ocorrencia.endereco.marker.id"></ui-gmap-marker>
+                        </ui-gmap-google-map>
+                    </div>
+
+
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab>
+                <md-tab-label>
+                    <span>Arquivos</span>
+                </md-tab-label>
+
+                <md-tab-body>
+                    <div class="ocorrencia-detail-form-container md-background-bg md-whiteframe-1dp">
+                        <div id="ocorrencia-image-uploader"
+                             flow-init="vm.ngFlowOptions"
+                             flow-name="vm.ngFlow.flow"
+                             flow-files-submitted="vm.upload()"
+                             flow-file-added="vm.fileAdded($file)"
+                             flow-file-success="vm.fileSuccess($file, $message)"
+                             flow-complete="vm.uploadComplete()"
+                             flow-drop
+                             flow-drag-enter="vm.dropping=true"
+                             flow-drag-leave="vm.dropping=false"
+                             ng-class="{'dropping':vm.dropping}">
+
+                            <div class="drop-text hint-text" layout="row" layout-align="center center">
+                                <span>Arraste a imagem aqui</span>
+                            </div>
+
+                            <div class="upload-button" layout="column" layout-align="center center">
+                                <md-button class="md-accent md-raised" flow-btn>
+                                    Upload
+                                </md-button>
+                                <span class="secondary-text mt-8">Arraste a imagem até aqui. Apenas PNG, JPG - Max. 8MB</span>
+                            </div>
+
+                            <div layout="row" layout-align="start start" layout-wrap>
+                                <div ng-repeat="image in vm.ocorrencia.images" ng-switch="image.type">
+                                    <div class="ocorrencia-image uploading" ng-switch-when="uploading" layout="row"
+                                         layout-align="center center">
+                                        <div class="overlay" layout="column" layout-align="center center">
+                                            <md-progress-linear md-mode="determinate"
+                                                                value="{{image.file.progress() * 100}}">
+                                            </md-progress-linear>
+                                        </div>
+                                        <img class="media" flow-img="image.file">
+                                    </div>
+
+                                    <div class="ocorrencia-image" ng-switch-when="image" layout="row"
+                                         layout-align="center center">
+                                        <img class="media" ng-src="{{image.url}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ocorrencia-detail-form-container videos md-background-bg md-whiteframe-1dp">
+                        <div class="pb-16" layout="row" layout-align="start center">
+                            <md-icon md-font-icon="icon-video" class="m-0 mr-16"></md-icon>
+                            <div class="h2 secondary-text">Vídeos</div>
+                        </div>
+                        <table class="simple" ms-responsive-table>
+                            <thead>
+                                <tr>
+                                    <th>Arquivo</th>
+                                    <th>Tamanho</th>
+                                    <th>Excluir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="shipping in vm.ocorrencia.shippingDetails">
+                                    <td class="tracking-code" editable-text="shipping.tracking">
+                                        {{shipping.tracking || 'Click to add a tracking code'}}
+                                    </td>
+                                    <td>
+                                        {{shipping.carrier}}
+                                    </td>
+                                    <td>
+                                        {{shipping.weight}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab>
+                <md-tab-label>
+                    <span>Visualizar</span>
+                </md-tab-label>
+
+                <md-tab-body>
+
+                    <div id="invoice" class="ocorrencia">
+                        <div class="invoice-container">
+
+                          <!-- INVOICE -->
+                          <div class="card md-whiteframe-8dp">
+                              <div class="header" layout="row" layout-align="space-between start">
+                                  <div class="ids" layout="column">
+                                      <div layout="row" class="seller" layout-align="start center">
+                                          <div class="logo md-accent-bg" layout="row" layout-align="center center">
+                                              <div>BCS</div>
+                                          </div>
+
+                                          <div class="divider"></div>
+                                      </div>
+                                  </div>
+
+                                  <table class="summary">
+                                      <tr class="code">
+                                          <td class="label">OCORRÊNCIA</td>
+                                          <td class="value">{{vm.ocorrencia.id}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td class="label">FUNCIONÁRIO</td>
+                                          <td class="value">{{vm.ocorrencia.Funcionario.matricula}} - {{vm.ocorrencia.Funcionario.nome}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td class="label">DATA DA OCORRÊNCIA</td>
+                                          <td class="value">{{vm.ocorrencia.dataOcorrencia}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td class="label">VEÍCULO</td>
+                                          <td class="value">{{vm.ocorrencia.Veiculo.identificador}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td class="label">QUANTIDADE</td>
+                                          <td class="value">{{vm.ocorrencia.qtde}}</td>
+                                      </tr>
+                                  </table>
+                              </div>
+
+                              <div class="content">
+
+                                  <div layout="row" layout-align="start start">
+                                      <div class="small-note" translate="INVOICE.SMALL_NOTE">
+                                          Conforme as cameras de monitoramento do veiculo.
+                                      </div>
+                                  </div>
+
+                                  <div layout="row" layout-align="start start">
+                                      <div ng-bind-html="vm.ocorrencia.descricao | unsafe"></div>
+                                  </div>
+
+                                  <div class="teste">
+                                    <img ng-src={{vm.ocorrencia.foto}}>
+                                  </div>
+                              </div>
+
+                              <div class="footer" layout="row">
+                                <div class="detail"  layout="column">
+                                  <div>__________________________________________________</div>
+                                    <div class="title">Nome: {{vm.ocorrencia.Funcionario.nome}}</div>
+                                    <div class="title">Matricula: {{vm.ocorrencia.Funcionario.matricula}}</div>
+                                    <div class="title">Data:</div>
+                                </div>
+                              </div>
+                          </div>
+                          <!-- / INVOICE -->
+
+                            <!-- Use the following element to add breaks to your pages -->
+                            <!-- This will make sure that the section after this element will be printed on a new page -->
+                            <div class="page-break"></div>
+
+                        </div>
+                    </div>
+
+                </md-tab-body>
+            </md-tab>
+
+        </md-tabs>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

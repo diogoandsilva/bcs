@@ -73,7 +73,8 @@
 
 
         // Navigation
-        msNavigationServiceProvider.saveItem('apps.mail', {
+        
+        msNavigationServiceProvider.saveItem('monitoramento.mail', {
             title      : 'Mail',
             icon       : 'icon-email',
             state      : 'app.mail.threads',
@@ -86,6 +87,7 @@
             },
             weight     : 4
         });
-        
+
+
     }
 })();

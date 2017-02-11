@@ -1,0 +1,305 @@
+#ocorrencia {
+
+    > .header {
+        height: 120px;
+        min-height: 120px;
+        max-height: 120px;
+
+        .goto-ocorrencias-button {
+            margin-right: 16px;
+        }
+
+        .subtitle {
+            margin: 6px 0 0 0;
+        }
+    }
+
+    .ocorrencia-detail-form-container {
+        padding: 24px;
+        margin-bottom: 24px;
+
+        .date-container {
+            padding: 16px 0 16px 0;
+        }
+        .secreto {
+          padding: 0px;
+        }
+
+        .info-container {
+            padding: 16px 0 16px 0;
+        }
+
+        &.customer {
+
+            table {
+                margin-bottom: 16px;
+            }
+            .address {
+                font-size: 16px;
+                padding: 8px 0 16px 0;
+            }
+        }
+
+        &.status {
+
+            .status {
+                white-space: nowrap;
+                padding: 4px 8px;
+                border-radius: 2px;
+            }
+
+            .update-status {
+                margin-top: 16px;
+            }
+        }
+
+        &.videos {
+
+            .tracking-code {
+
+                &.editable-click {
+                    cursor: pointer;
+                }
+            }
+
+            .editable-controls {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 8px 0 8px 24px;
+
+                input {
+                    border: 1px solid rgba(0, 0, 0, 0.12);
+                    padding: 4px;
+                }
+
+                .editable-buttons {
+
+                    button {
+                        margin: 0;
+                    }
+                }
+            }
+
+        }
+
+        &.products {
+            padding: 0;
+
+            .dataTables_wrapper {
+
+                .dataTables_scrollHead {
+                    box-shadow: none;
+                }
+
+                .dataTables_scrollBody {
+
+                    table {
+
+                        tr {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .product-image {
+                        width: 52px;
+                        height: 52px;
+                        border: 1px solid rgba(0, 0, 0, 0.12);
+                    }
+                }
+            }
+        }
+
+        #ocorrencia-image-uploader {
+            position: relative;
+
+            &.dropping {
+
+                .drop-text {
+                    display: flex;
+                }
+            }
+
+            .drop-text {
+                display: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                padding: 16px;
+                text-align: center;
+                border: 2px dashed rgba(0, 0, 0, 0.12);
+                background: #FFFFFF;
+                font-size: 20px;
+                z-index: 100;
+            }
+
+            .upload-button {
+                margin-bottom: 16px;
+            }
+
+            .ocorrencia-image {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                border: 1px solid rgba(0, 0, 0, 0.12);
+                margin: 8px;
+
+                &.uploading {
+
+                    .overlay {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background: rgba(0, 0, 0, 0.87);
+                    }
+                }
+
+                .media {
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+}
+/* PRINT STYLES */
+@media print {
+
+    /* Invoice Specific Styles */
+    #invoice {
+
+        &.ocorrencia {
+
+            .invoice-container {
+                padding: 0;
+
+                .card {
+                    width: 100%;
+                    min-width: 0;
+                    background: none;
+                    padding: 0;
+                    box-shadow: none;
+
+                    .header {
+
+                        .ids {
+
+                            .detail {
+                                width: 120pt;
+                            }
+
+                            .seller {
+                                margin-bottom: 8pt;
+
+                                .logo {
+                                    width: 60pt;
+                                    height: 60pt;
+                                    font-size: 40pt;
+                                }
+                            }
+
+                            .client {
+
+                                .label {
+                                    width: 60pt;
+                                    font-size: 16pt;
+                                }
+                            }
+
+                            .divider {
+                                margin: 0 12pt;
+                                height: 100pt;
+                            }
+                        }
+
+                        .summary {
+                            font-size: 10pt;
+
+                            .code {
+                                font-size: 18pt;
+
+                                td {
+                                    padding-bottom: 10pt;
+                                }
+                            }
+                        }
+                    }
+
+                    .content {
+
+                        .invoice-table {
+                            margin-top: 16pt;
+
+                            thead {
+
+                                tr {
+
+                                    th {
+                                        font-size: 10pt;
+                                        max-width: 60pt;
+
+                                        &:first-child {
+                                            padding-left: 0;
+                                        }
+
+                                        &:last-child {
+                                            padding-right: 0;
+                                        }
+                                    }
+                                }
+                            }
+
+                            tbody {
+
+                                tr {
+
+                                    td {
+
+                                        &:first-child {
+                                            padding-left: 0;
+                                        }
+
+                                        &:last-child {
+                                            padding-right: 0;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .title {
+                                font-size: 10pt;
+                            }
+
+                            .detail {
+                                margin-top: 4pt;
+                                font-size: 9pt;
+                                max-width: none;
+                            }
+                        }
+
+                    }
+
+                    .footer {
+                        .note {
+                            font-size: 10pt;
+                            margin-bottom: 8pt;
+                        }
+
+                        .logo {
+                            font-size: 14pt;
+                            margin-right: 8pt;
+                        }
+
+                        .small-note {
+                            font-size: 8pt;
+                            line-height: normal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

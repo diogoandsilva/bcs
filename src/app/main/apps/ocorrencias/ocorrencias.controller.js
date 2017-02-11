@@ -3,14 +3,15 @@
     'use strict';
 
     angular
-        .module('app.ocorrencia')
-        .controller('OcorrenciaController', OcorrenciaController);
+        .module('app.ocorrencias')
+        .controller('OcorrenciasController', OcorrenciasController);
 
     /** @ngInject */
-    function OcorrenciaController($document, $mdDialog, $mdSidenav, Tasks, Tags)
+    function OcorrenciasController($document, $mdDialog, $mdSidenav, $state, Tasks, Tags, api)
     {
         var vm = this;
 
+        var idMoni;
         // Data
         vm.tasks = Tasks.data;
         vm.tags = Tags.data;
@@ -19,11 +20,11 @@
         vm.projects = {
             'monitoramento'    : 'Monitoramento'
         };
+
         vm.selectedFilter = {
             filter : 'Data Criação',
             dueDate: 'Next 3 days'
         };
-        vm.selectedProject = 'monitoramento';
 
         // Tasks will be filtered against these models
         vm.taskFilters = {
@@ -56,7 +57,6 @@
 
         // Methods
         vm.preventDefault = preventDefault;
-        vm.openTaskDialog = openTaskDialog;
         vm.toggleCompleted = toggleCompleted;
         vm.toggleSidenav = toggleSidenav;
         vm.toggleFilter = toggleFilter;
@@ -66,6 +66,7 @@
         vm.resetFilters = resetFilters;
         vm.toggleTagFilter = toggleTagFilter;
         vm.isTagFilterExists = isTagFilterExists;
+        vm.gotoOcorrencia = gotoOcorrencia;
 
         init();
 
@@ -76,6 +77,16 @@
          */
         function init()
         {
+
+            idMoni = $state.params.idMoni;
+
+            api.monitoramento.getBytUsuarioId.get({usuarioId: 1},function(ms) {
+              idMoni = ms.MonitoramentoId;
+              vm.monitoramento = ms.Monitoramento;
+              vm.monitoramentos = ms.Monitoramento;
+              vm.selectedProject = ms.Monitoramento;
+            });
+
             angular.forEach(vm.tasks, function (task)
             {
                 if ( task.startDate )
@@ -101,29 +112,6 @@
         {
             e.preventDefault();
             e.stopPropagation();
-        }
-
-        /**
-         * Open new task dialog
-         *
-         * @param ev
-         * @param task
-         */
-        function openTaskDialog(ev, task)
-        {
-            $mdDialog.show({
-                controller         : 'OcorrenciaDialogController',
-                controllerAs       : 'vm',
-                templateUrl        : 'app/main/apps/ocorrencia/dialogs/task/task-dialog.html',
-                parent             : angular.element($document.body),
-                targetEvent        : ev,
-                clickOutsideToClose: true,
-                locals             : {
-                    Task : task,
-                    Tasks: vm.tasks,
-                    event: ev
-                }
-            });
         }
 
         /**
@@ -258,6 +246,19 @@
         function isTagFilterExists(tag)
         {
             return vm.taskFilters.tags.indexOf(tag) > -1;
+        }
+
+        /**
+         * Go to product detail
+         *
+         * @param id
+          */
+        function gotoOcorrencia(id)
+        {
+          if(!idMoni){
+            idMoni = $state.params.idMoni;
+          }
+          $state.go('app.ocorrencias.monitoramento.ocorrencia', {idMoni: idMoni, id: id});
         }
     }
 })();

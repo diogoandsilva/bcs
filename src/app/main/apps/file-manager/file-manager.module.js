@@ -39,7 +39,7 @@
         msApiProvider.register('fileManager.documents', ['app/data/file-manager/documents.json']);
 
         // Navigation
-        msNavigationServiceProvider.saveItem('apps.file-manager', {
+        msNavigationServiceProvider.saveItem('monitoramento.file-manager', {
             title : 'Arquivos',
             icon  : 'icon-folder',
             state : 'app.file-manager',

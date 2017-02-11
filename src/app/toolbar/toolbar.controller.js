@@ -7,7 +7,7 @@
         .controller('ToolbarController', ToolbarController);
 
     /** @ngInject */
-    function ToolbarController($location,$window,$rootScope, $q, $state, $timeout, $mdSidenav, $translate, $mdToast, msNavigationService)
+    function ToolbarController($location,$window,$rootScope, $q, $state, $timeout, $mdSidenav, $translate, $mdToast, msNavigationService, auth)
     {
         var vm = this;
 
@@ -70,10 +70,12 @@
         vm.logout = logout;
         vm.changeLanguage = changeLanguage;
         vm.setUserStatus = setUserStatus;
+        vm.getUserName = getUserName;
         vm.toggleHorizontalMobileMenu = toggleHorizontalMobileMenu;
         vm.toggleMsNavigationFolded = toggleMsNavigationFolded;
         vm.search = search;
         vm.searchResultClick = searchResultClick;
+        var token = "";
 
         //////////
 
@@ -112,12 +114,21 @@
         }
 
         /**
+         * Gets User Name
+         * @param none
+         */
+        function getUserName()
+        {
+          return auth.getUserName();
+        }
+
+        /**
          * Logout Function
          */
         function logout()
         {
-             $window.sessionStorage.accessToken = undefined;
              $window.localStorage.removeItem('jwtToken');
+             $window.localStorage.removeItem('userName');
              $location.path( "/LOGIN" );
         }
 

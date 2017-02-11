@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.ocorrencia')
+        .module('app.ocorrencias')
         .controller('OcorrenciaDialogController', OcorrenciaDialogController);
 
     /** @ngInject */
@@ -67,9 +67,6 @@
         vm.tipos = api.ocorrenciaTipo.list(function() {});
         vm.veiculos = api.veiculo.list({garagemId: 1},function() {});
         //vm.garagens = api.garagem.list(function() {});
-
-
-        //////////
 
         /**
          * Add new task

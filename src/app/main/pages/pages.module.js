@@ -25,11 +25,13 @@
     function config(msNavigationServiceProvider)
     {
 
+      /*
         // Navigation
         msNavigationServiceProvider.saveItem('pages', {
             title : 'ADICIONAIS',
             group : true,
             weight: 2
         });
+      */
     }
 })();

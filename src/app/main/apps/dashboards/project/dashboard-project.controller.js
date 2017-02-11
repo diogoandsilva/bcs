@@ -11,26 +11,6 @@
     {
         var vm = this;
 
-        var usuarios = api.usuarios.list(function() {
-          console.log(usuarios);
-        });
-
-
-        /*
-        var req = {
-         method: 'GET',
-         url: 'http://127.0.0.1:5000/api/usuarios',
-         headers: {
-           'Authorization': 'diogo'
-         },
-         data: { test: 'test' }
-        }
-
-        $http(req).then(function(){
-
-        });
-        */
-
         // Data
         vm.dashboardData = DashboardData;
         vm.projects = vm.dashboardData.projects;

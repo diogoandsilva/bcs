@@ -203,38 +203,38 @@
             {
                 shortcuts = [
                     {
-                        'title'      : 'Chat',
-                        'icon'       : 'icon-hangouts',
-                        'state'      : 'app.chat',
+                        'title'      : 'Ocorrências',
+                        'icon'       : 'icon-checkbox-marked',
+                        'state'      : 'app.ocorrencias',
                         'badge'      : {
                             'content': 13,
                             'color'  : '#09d261'
                         },
                         'weight'     : 5,
                         'children'   : [],
-                        '_id'        : 'chat',
-                        '_path'      : 'apps.chat',
-                        'uisref'     : 'app.chat',
+                        '_id'        : 'ocorrencias',
+                        '_path'      : 'apps.ocorrencias',
+                        'uisref'     : 'app.ocorrencias',
                         'hasShortcut': true
                     }, {
-                        'title'      : 'Contacts',
-                        'icon'       : 'icon-account-box',
-                        'state'      : 'app.contacts',
+                        'title'      : 'Arquivos',
+                        'icon'       : 'icon-folder',
+                        'state'      : 'app.arquivos',
                         'weight'     : 10,
                         'children'   : [],
-                        '_id'        : 'contacts',
-                        '_path'      : 'apps.contacts',
-                        'uisref'     : 'app.contacts',
+                        '_id'        : 'arquivos',
+                        '_path'      : 'apps.arquivos',
+                        'uisref'     : 'app.arquivos',
                         'hasShortcut': true
                     }, {
-                        'title'      : 'Notes',
-                        'icon'       : 'icon-lightbulb',
-                        'state'      : 'app.notes',
+                        'title'      : 'Monitorados',
+                        'icon'       : 'icon-clipboard',
+                        'state'      : 'app.monitorados',
                         'weight'     : 11,
                         'children'   : [],
-                        '_id'        : 'notes',
-                        '_path'      : 'apps.notes',
-                        'uisref'     : 'app.notes',
+                        '_id'        : 'monitorados',
+                        '_path'      : 'apps.monitorados',
+                        'uisref'     : 'app.monitorados',
                         'hasShortcut': true
                     }
                 ];

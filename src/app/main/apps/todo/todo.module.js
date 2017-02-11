@@ -46,7 +46,8 @@
 
 
         // Navigation
-        msNavigationServiceProvider.saveItem('apps.to-do', {
+        /*
+        msNavigationServiceProvider.saveItem('monitoramento.to-do', {
             title : 'To-Do',
             icon  : 'icon-checkbox-marked',
             state : 'app.to-do',
@@ -56,7 +57,8 @@
             },
             weight: 9
         });
-        
+        */
+
     }
 
 })();

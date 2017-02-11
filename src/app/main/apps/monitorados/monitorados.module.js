@@ -46,7 +46,7 @@
 
 
         // Navigation
-        msNavigationServiceProvider.saveItem('apps.monitorados', {
+        msNavigationServiceProvider.saveItem('monitoramento.monitorados', {
             title : 'Monitorados',
             icon  : 'icon-clipboard',
             state : 'app.monitorados',
@@ -55,7 +55,7 @@
                 color  : '#FF6F00'
             },
             */
-            weight: 9
+            weight: 2
         });
 
     }

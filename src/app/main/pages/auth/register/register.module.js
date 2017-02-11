@@ -29,11 +29,13 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/register');
 
         // Navigation
+        /*
         msNavigationServiceProvider.saveItem('pages.auth.register', {
             title : 'Register',
             state : 'app.pages_auth_register',
             weight: 3
         });
+        */
     }
 
 })();
