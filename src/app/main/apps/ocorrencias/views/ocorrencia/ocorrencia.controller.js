@@ -45,25 +45,25 @@
         var garagens;
         var veiculos;
 
-        api.ocorrenciaTipo.list(function(ot) {
+        api.ocorrenciaTipo.query(function(ot) {
           ocorrenciaTipos = ot;
           vm.ocorrenciaTipos = ocorrenciaTipos;
         });
 
-        api.veiculo.list({garagemId: 2},function(vs) {
+        //TODO MUDAR ISSO AQUI PARA AS PERMISSOES DO USUARIO
+        api.garagens.listByMonitoramento.query({monitoramentoId: 1},function(gs) {
+          garagens = gs;
+          vm.garagens = gs;
+        });
+
+        api.veiculos.query({garagemId: 2},function(vs) {
           veiculos = vs;
           vm.veiculos = veiculos;
         });
 
-        console.log("Fala mano");
-        api.garagens.list({monitoramentoId: 1},function(vs) {
-          garagens = gs;
-          vm.garagens = gs;
-
-          api.funcionario.list({garagemId: gs.id},function(fs) {
-            funcionarios = fs;
-            vm.funcionarios = funcionarios;
-          });
+        api.funcionarios.query({garagemId: 2},function(fs) {
+          funcionarios = fs;
+          vm.funcionarios = funcionarios;
         });
 
         // Methods
@@ -74,26 +74,6 @@
         //////////
 
         init();
-
-        // Normally, you would need Google Maps Geocoding API
-        // to convert addresses into latitude and longitude
-        // but because Google's policies, we are faking it for
-        // the demo
-
-        uiGmapGoogleMapApi.then(function (maps)
-        {
-            vm.ocorrencia.endereco = {
-                center: {
-                    latitude : -23.204933,
-                    longitude: -46.799993
-                },
-                marker: {
-                    id: 'ocorrencia'
-                },
-                zoom  : 14
-            };
-        });
-
 
         /**
          * Initialize
@@ -118,14 +98,32 @@
               vm.acao = 'Adicionar';
             }
 
-            api.ocorrencia.getById.get({id:id},function(oc){
+            api.ocorrencia.get({id:id},function(oc){
               if ( oc.createdAt )
                   oc.createdAt = new Date(oc.createdAt);
 
               if ( oc.dataOcorrencia )
                   oc.dataOcorrencia = new Date(oc.dataOcorrencia);
+
               oc.foto = "assets/images/ocorrencia/teste.jpg";
+
+              console.log(oc);
+
               vm.ocorrencia = oc;
+
+              uiGmapGoogleMapApi.then(function (maps)
+              {
+                  vm.ocorrencia.endereco = {
+                      center: {
+                          latitude : -23.204933,
+                          longitude: -46.799993
+                      },
+                      marker: {
+                          id: 'ocorrencia'
+                      },
+                      zoom  : 14
+                  };
+              });
 
               vm.ocorrencia.images = [{
                   "default": true,

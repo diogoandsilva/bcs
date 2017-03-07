@@ -43,27 +43,30 @@
 
                       <div class="p-24 mb-8 border-bottom" layout="row" layout-align="space-between center">
                           <div class="h2">{{vm.widget11.title}}</div>
-                          <div class="text-boxed red-bg white-fg m-0">{{vm.widget11.table.rows.length}}
+                          <div class="text-boxed red-bg white-fg m-0">{{vm.veiculos.length}}
                               Veículos
                           </div>
                       </div>
 
                       <table class="dataTable row-border hover" datatable="ng" dt-options="vm.widget11.dtOptions" dt-instance="vm.widget11.dtInstance">
                           <thead>
-                              <tr>
-                                  <th class="secondary-text" ng-repeat="column in ::vm.widget11.table.columns">
-                                      <div class="table-header">
-                                          <span class="column-title">{{column.title}}</span>
-                                      </div>
-                                  </th>
-                              </tr>
+                            <tr>
+                                <th>Id</th>
+                                <th>Prefixo</th>
+                                <th>Placa</th>
+                                <th>Garagem</th>
+                                <th>Monitorado</th>
+                                <th>Ativo</th>
+                            </tr>
                           </thead>
                           <tbody>
-                              <tr ng-repeat="veiculo in ::vm.widget11.table.rows">
-                                <td>{{ veiculo.identificador }}</td>
-                                <td>{{ veiculo.placa }}</td>
-                                <td>{{ veiculo.Garagem.nome }}</td>
-                                <td>{{ veiculo.monitorado }}</td>
+                              <tr ng-repeat="veiculo in ::vm.veiculos">
+                                  <td>{{ veiculo.id }}</td>
+                                  <td>{{ veiculo.identificador }}</td>
+                                  <td>{{ veiculo.placa }}</td>
+                                  <td>{{ veiculo.Garagem.nome }}</td>
+                                  <td>{{ veiculo.monitorado }}</td>
+                                  <td>{{ veiculo.ativo }}</td>
                               </tr>
                           </tbody>
                       </table>

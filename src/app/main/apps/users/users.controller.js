@@ -33,15 +33,15 @@
             ],
             "rows": []
       };
-
-        var usuarios = api.usuarios.list(function() {
+        api.usuarios.query(function(usuarios) {
+          console.log(usuarios);
           tabela.rows = Array.from(usuarios);
-          console.log('length:'+ tabela.rows.length);
+          //console.log('length:'+ tabela.rows.length);
            tabela.rows.forEach(function(element, index, array) {
-             console.log(index + ':' + element);
+             //console.log(index + ':' + element);
            });
           tabela.rows = Array.from(tabela.rows);
-          console.log(tabela);
+          //console.log(tabela);
         });
 
 
@@ -51,7 +51,7 @@
         vm.usersData = UsersData;
         vm.projects = vm.usersData.projects;
 
-        console.log(vm.usersData.widget11.table);
+        //console.log(vm.usersData.widget11.table);
 
         // Widget 11
         vm.widget11 = {

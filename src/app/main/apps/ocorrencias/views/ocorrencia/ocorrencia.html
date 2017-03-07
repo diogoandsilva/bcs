@@ -58,6 +58,17 @@
 
                           <div layout-xs="column" layout="row">
                               <div flex class="info-container">
+                                <md-input-container class="md-block" flex-gt-sm="">
+                                  <label>Garagem</label>
+                                  <md-select ng-model="vm.ocorrencia.Garagem.nome">
+                                    <md-option ng-repeat="garagem in vm.garagens" value="{{garagem.nome}}">
+                                      {{garagem.nome}}
+                                    </md-option>
+                                  </md-select>
+                                </md-input-container>
+                              </div>
+                            
+                              <div flex class="info-container">
                                   <md-input-container class="md-block" flex-gt-sm="">
                                     <label>Veículo</label>
                                     <md-select ng-model="vm.ocorrencia.Veiculo.identificador">
@@ -68,16 +79,7 @@
                                   </md-input-container>
                               </div>
 
-                              <div flex class="info-container">
-                                  <md-input-container class="md-block" flex-gt-sm="">
-                                    <label>Garagem</label>
-                                    <md-select ng-model="vm.ocorrencia.Garagem.nome">
-                                      <md-option ng-repeat="garagem in vm.garagens" value="{{garagem.nome}}">
-                                        {{garagem.nome}}
-                                      </md-option>
-                                    </md-select>
-                                  </md-input-container>
-                              </div>
+
 
                               <div flex class="info-container">
                                   <md-input-container class="md-block" flex-gt-sm="">
@@ -110,7 +112,7 @@
                               <div flex class="info-container">
                                 <md-list class="secreto">
                                     <md-list-item class="secreto">
-                                      <label>Secreto</label>
+                                      <label>Confidencial</label>
                                       <md-switch class="md-secondary" ng-model="vm.ocorrencia.secreto" aria-label="Secreto"></md-switch>
                                     </md-list-item>
                                  </md-list>

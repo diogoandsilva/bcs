@@ -8,9 +8,9 @@
         <span class="logo-text">Ocorrências</span>
     </div>
 
-    <md-select ng-model="vm.monitoramento.descricao" md-autofocus>
-      <md-option ng-repeat="moni in vm.monitoramentos" value="{{descricao}}">
-        {{descricao}}
+    <md-select aria-label="monitoramento" ng-model="vm.monitoramento.descricao" md-autofocus>
+      <md-option ng-repeat="moni in vm.monitoramentos" value="{{moni.descricao}}">
+        {{moni.descricao}}
       </md-option>
     </md-select>
 </div>
@@ -43,7 +43,7 @@
                    ng-click="vm.toggleFilterWithEmpty('important')"
                    ng-class="{'selected':vm.taskFilters.important}">
             <md-icon md-font-icon="icon-alert-circle" class="s16"></md-icon>
-            <span class="title">Secretas</span>
+            <span class="title">Confidenciais</span>
         </md-button>
 
         <md-button class="item" aria-label="Today" translate translate-attr-aria-label="OCORRENCIA.TODAY"

@@ -7,21 +7,29 @@
         .controller('VeiculosController', VeiculosController);
 
     /** @ngInject */
-    function VeiculosController($http, $document, $mdDialog, $mdSidenav, $scope, $interval,  Veiculos, api)
+    function VeiculosController($http, $document, $mdDialog, $mdSidenav, $state, $scope, $interval,  Veiculos, api)
     {
         var vm = this;
 
         // Data
         vm.veiculo = Veiculos;
 
-        vm.garagens = api.garagens.list({},function(){});
+        api.garagens.list.query({},function(garagens){
+          vm.garagens = garagens;
+        });
+
+
+        //TODO TROCAR PARA A GARAGEM PADRAO DO USUARIO
+        var id = 1;
+        if($state.params.idGaragem){
+          id = $state.params.idGaragem;
+        }
         //TODO: Selecionar a garagem do usuario
-        api.garagem.getById.get({id:1},function(garagem){
-           vm.selectedGaragem = garagem;
-           api.veiculo.list({garagemId: garagem.id},function(veiculos) {
-             console.log(veiculos);
-             vm.widget11.table.rows = veiculos;
-           });
+        api.garagem.get({id:id},function(garagem){
+          vm.selectedGaragem = garagem;
+          api.veiculos.query({garagemId:garagem.id}, function(veiculos){
+            vm.veiculos = veiculos;
+          });
         });
 
         // Methods
@@ -41,8 +49,8 @@
                 order     : [0, 'asc'],
                 columnDefs: [
                     {
-                        width  : '25%',
-                        targets: [0, 1, 2, 3]
+                        width  : '16%',
+                        targets: [0, 1, 2, 3, 4, 5]
                     }
                 ],
                 rowCallback: rowCallback
@@ -69,18 +77,18 @@
                 clickOutsideToClose: true,
                 locals             : {
                     Veiculo : veiculo,
-                    Veiculos: vm.veiculos,
                     event: ev
                 }
             });
         }
 
         function rowCallback(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-          // Unbind first in order to avoid any duplicate handler (see https://github.com/l-lin/angular-datatables/issues/87)
           $('td', nRow).unbind('click');
           $('td', nRow).bind('click', function() {
               $scope.$apply(function() {
-                  openVeiculoDialog(aData);
+                api.veiculo.get({id: aData[0]},function(veiculo) {
+                  openVeiculoDialog(veiculo);
+                });
               });
           });
           return nRow;
@@ -102,11 +110,7 @@
          * @param garagem
          */
         function selectGaragem(garagem){
-            vm.selectedGaragem = garagem;
-
-            api.veiculo.list({garagemId: garagem.id},function(veiculos) {
-              vm.widget11.table.rows = veiculos;
-            });
+            $state.go('app.veiculos.garagem', {idGaragem: garagem.id});
         }
     }
 

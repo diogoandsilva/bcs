@@ -21,19 +21,50 @@
                 </div>
             </md-input-container>
 
-            <div layout-xs="column" layout="row">
-            
-
-                <div flex class="info-container">
-                    <md-input-container class="md-block" flex-gt-sm="">
-                      <label>Garagem</label>
-                      <md-select ng-model="vm.veiculo.garagem">
-                        <md-option ng-repeat="garagem in vm.garagens" value="{{veiculo.garagem}}">
-                          {{veiculo.garagem}}
-                        </md-option>
-                      </md-select>
-                    </md-input-container>
+            <md-input-container class="md-block">
+                <label>Placa</label>
+                <input name="placa" ng-model="vm.veiculo.placa" required md-autofocus>
+                <div ng-messages="veiculoForm.placa.$error" ng-show="veiculoForm.placa.$touched" role="alert">
+                    <div ng-message="required">
+                        <span>É necessário informar uma placa para o veículo.</span>
+                    </div>
                 </div>
+            </md-input-container>
+
+
+            <div layout-xs="column" layout="row">
+
+              <div flex class="info-container">
+                <md-input-container class="md-block" flex-gt-sm="">
+                  <label>Garagem</label>
+                  <md-select ng-model="vm.veiculo.GaragemId">
+                    <md-option ng-repeat="garagem in vm.garagens" value="{{garagem.id}}">
+                      {{garagem.nome}}
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+
+            </div>
+
+            <div flex class="info-container">
+              <md-list class="secreto">
+                  <md-list-item class="secreto">
+                    <label>Monitorado</label>
+                    <md-switch class="md-secondary" ng-model="vm.veiculo.monitorado" aria-label="Secreto"></md-switch>
+                  </md-list-item>
+               </md-list>
+            </div>
+
+
+
+            <div flex class="info-container">
+              <md-list class="secreto">
+                  <md-list-item class="secreto">
+                    <label>Ativo</label>
+                    <md-switch class="md-secondary" ng-model="vm.veiculo.ativo" aria-label="Secreto"></md-switch>
+                  </md-list-item>
+               </md-list>
             </div>
 
         </md-dialog-content>
@@ -43,15 +74,15 @@
                 <md-button type="submit" ng-if="!vm.newVeiculo" ng-click="vm.saveVeiculo()"
                            class="send-button md-accent md-raised"
                            ng-disabled="veiculoForm.$invalid || veiculoForm.$pristine"
-                           aria-label="SAVE" translate="TODO.SAVE" translate-attr-aria-label="TODO.SAVE">
-                    SAVE
+                           aria-label="SALVAR">
+                    SALVAR
                 </md-button>
 
                 <md-button type="submit" ng-if="vm.newVeiculo" ng-click="vm.addNewVeiculo()"
                            class="send-button md-accent md-raised"
                            ng-disabled="veiculoForm.$invalid || veiculoForm.$pristine"
-                           aria-label="Add Veiculo" translate="TODO.ADD_TASK" translate-attr-aria-label="TODO.ADD_TASK">
-                    ADD TASK
+                           aria-label="Add Veiculo">
+                    ADICIONAR
                 </md-button>
             </div>
 

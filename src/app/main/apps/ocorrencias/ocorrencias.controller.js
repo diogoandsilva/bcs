@@ -12,14 +12,12 @@
         var vm = this;
 
         var idMoni;
+
         // Data
         vm.tasks = Tasks.data;
         vm.tags = Tags.data;
         vm.completed = [];
         vm.colors = ['blue', 'blue-grey', 'orange', 'pink', 'purple'];
-        vm.projects = {
-            'monitoramento'    : 'Monitoramento'
-        };
 
         vm.selectedFilter = {
             filter : 'Data Criação',
@@ -83,7 +81,7 @@
             api.monitoramento.getBytUsuarioId.get({usuarioId: 1},function(ms) {
               idMoni = ms.MonitoramentoId;
               vm.monitoramento = ms.Monitoramento;
-              vm.monitoramentos = ms.Monitoramento;
+              vm.monitoramentos = new Array(ms.Monitoramento);
               vm.selectedProject = ms.Monitoramento;
             });
 

@@ -31,6 +31,22 @@
                 }
             },
             bodyClass: 'veiculos'
+        })
+        .state('app.veiculos.garagem', {
+          url      : '/:idGaragem',
+          views    : {
+              'content@app': {
+                templateUrl: 'app/main/apps/veiculos/veiculos.html',
+                controller : 'VeiculosController as vm'
+              }
+          },
+          resolve  : {
+              Veiculos: function (msApi)
+              {
+                  return msApi.resolve('veiculos@get');
+              }
+          },
+          bodyClass: 'veiculos'
         });
 
         msNavigationServiceProvider.saveItem('cadastros.veiculos', {

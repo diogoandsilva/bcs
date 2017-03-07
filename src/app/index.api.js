@@ -14,54 +14,41 @@
       // Base Url
       api.baseUrl = 'http://127.0.0.1:5000/api/';
       var token = auth.getToken();
+
       api.login = $resource('http://127.0.0.1:5000/login',{email: '@email', senha:'@senha' }, {login: { method: 'POST' }});
 
-      api.usuarios = $resource(api.baseUrl + 'usuarios', {}, {
-         'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
+      /*api.usuarios = $resource(api.baseUrl + 'usuarios', {}, {
+        list: {method:'GET', isArray:true, params:{access_token:token}}
       });
-      api.ocorrenciaTipo = $resource(api.baseUrl + 'ocorrenciaTipos', {}, {
-         'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
-      });
-      api.veiculo = $resource(api.baseUrl + 'veiculos', {garagemId: '@garagemId'}, {
-         'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
-      });
+      */
+      api.usuarios = $resource(api.baseUrl + 'usuarios');
 
-      api.funcionario = $resource(api.baseUrl + 'funcionarios', {}, {
-         'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
+      api.ocorrenciaTipo = $resource(api.baseUrl + 'ocorrenciaTipos');
+
+      api.veiculos = $resource(api.baseUrl + 'veiculos/:garagemId', {garagemId: '@garagemId'});
+
+      api.funcionarios = $resource(api.baseUrl + 'funcionarios/:garagemId', {garagemId: '@garagemId'});
+
+      api.ocorrencias = $resource(api.baseUrl + 'ocorrencias', {garagemId: '@garagemId'});
+
+      api.ocorrencia = $resource(api.baseUrl + 'ocorrencia/:id', {id: '@id'});
+      /*
+      api.garagens = $resource(api.baseUrl + 'garagens/:monitoramentoId', {monitoramentoId: '@monitoramentoId'}, {
+         'listByMonitoramento' : {method: 'GET', isArray:true, params:{access_token:token}}
       });
+      */
 
-      api.ocorrencias = $resource(api.baseUrl + 'ocorrencias', {garagemId: '@garagemId'}, {
-         'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
-      });
+      api.veiculo = $resource(api.baseUrl + 'veiculo/:id', {id: '@id'});
 
-      api.ocorrencia = {
-          list : $resource(api.baseUrl + 'ocorrencia', {
-              method: 'GET',
-              isArray: true,
-              headers: { Authorization: token }
-          }),
-          getById : $resource(api.baseUrl + 'ocorrencia/:id', {id: '@id'}, {
-              method: 'GET',
-              headers: { Authorization: token }
-          })
-      };
+      api.garagem = $resource(api.baseUrl + 'garagem/:id', {id: '@id'});
 
-      api.garagens = $resource(api.baseUrl + 'garagens', {monitoramentoId: '@monitoramentoId'}, {
-         'list' : {method: 'GET', isArray:true, headers: { Authorization: token }}
-      });
-
-      api.garagem = {
-          getById : $resource(api.baseUrl + 'garagem/:id', {id: '@id'}, {
-              method: 'GET',
-              headers: { Authorization: token }
-          })
+      api.garagens = {
+        list : $resource(api.baseUrl + 'garagens'),
+        listByMonitoramento : $resource(api.baseUrl + 'garagens/:monitoramentoId', {monitoramentoId: '@monitoramentoId'})
       };
 
       api.monitoramento = {
-          getBytUsuarioId : $resource(api.baseUrl + 'monitoramento/:usuarioId', {usuarioId: '@usuarioId'}, {
-              method: 'GET',
-              headers: { Authorization: token }
-          })
+          getBytUsuarioId : $resource(api.baseUrl + 'monitoramento/:usuarioId', {usuarioId: '@usuarioId'})
       };
 
       //api.getBlogList = $resource('http://api.example.com/getBlogList');

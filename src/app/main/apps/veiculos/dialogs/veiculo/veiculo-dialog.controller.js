@@ -7,16 +7,13 @@
         .controller('VeiculoDialogController', VeiculoDialogController);
 
     /** @ngInject */
-    function VeiculoDialogController($mdDialog, Veiculo, Veiculos, event, api)
+    function VeiculoDialogController($mdDialog, $state, Veiculo, event, api)
     {
         var vm = this;
-
-        console.log(Veiculo);
 
         // Data
         vm.title = 'Editar Veículo';
         vm.veiculo = angular.copy(Veiculo);
-        vm.veiculos = Veiculos;
 
         vm.newVeiculo = false;
         var dataOntem = new Date();
@@ -31,7 +28,8 @@
                 'GaragemId'         : '',
                 'createdAt'         : new Date(),
                 'updatedAt'         : new Date(),
-                'ativo'             : false
+                'monitorado'        : true,
+                'ativo'             : true
             };
             vm.title = 'Adicionar Veículo';
             vm.newVeiculo = true;
@@ -44,8 +42,13 @@
         vm.deleteVeiculo = deleteVeiculo;
         vm.closeDialog = closeDialog;
 
-        vm.tipos = api.ocorrenciaTipo.list(function() {});
-        vm.veiculos = api.veiculo.list(function() {});
+        api.ocorrenciaTipo.query(function(ocorrenciaTipos) {
+            vm.tipos = ocorrenciaTipos;
+        });
+
+        api.garagens.list.query(function(garagens) {
+          vm.garagens = garagens;
+        });
 
 
         //////////
@@ -55,7 +58,6 @@
          */
         function addNewVeiculo()
         {
-            vm.veiculos.unshift(vm.veiculo);
 
             closeDialog();
         }
@@ -65,16 +67,13 @@
          */
         function saveVeiculo()
         {
-            // Dummy save action
-            for ( var i = 0; i < vm.veiculos.length; i++ )
-            {
-                if ( vm.veiculos[i].id === vm.veiculo.id )
-                {
-                    vm.veiculos[i] = angular.copy(vm.veiculo);
-                    break;
-                }
+            api.veiculo.save(vm.veiculo);
+            //TODO ARRUMAR PARA COLOCAR O ID DA GARAGEM PADRAO DO USUARIO
+            var id = 1;
+            if($state.params.idGaragem){
+              id = $state.params.idGaragem;
             }
-
+            $state.reload();
             closeDialog();
         }
 
@@ -85,23 +84,16 @@
         {
             var confirm = $mdDialog.confirm()
                 .title('Tem certeza?')
-                .content('Esse veículo será excluído.')
-                .ariaLabel('Excluir Veículo')
-                .ok('Deletar')
+                .content('Esse veículo será desativado.')
+                .ariaLabel('Desativar Veículo')
+                .ok('Desativar')
                 .cancel('Cancelar')
                 .targetEvent(event);
 
             $mdDialog.show(confirm).then(function ()
             {
-                // Dummy delete action
-                for ( var i = 0; i < vm.veiculos.length; i++ )
-                {
-                    if ( vm.veiculos[i].id === vm.veiculo.id )
-                    {
-                        vm.veiculos[i].deleted = true;
-                        break;
-                    }
-                }
+                vm.veiculo.ativo = false;
+                saveVeiculo();
             }, function ()
             {
                 // Cancel Action

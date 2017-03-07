@@ -17,7 +17,7 @@
     {
         // State
         $stateProvider.state('app.users', {
-            url      : '/users',
+            url      : '/usuarios',
             views    : {
                 'content@app': {
                     templateUrl: 'app/main/apps/users/users.html',

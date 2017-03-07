@@ -19,7 +19,7 @@
             <md-button class="md-icon-button add-shortcut-button" aria-label="Add shortcut"
                        ng-click="$mdOpenMenu($event)">
                 <md-icon md-menu-origin md-font-icon="icon-star" class="icon amber-600-fg s24"></md-icon>
-                <md-tooltip md-direction="bottom">Click to add/remove shortcut</md-tooltip>
+                <md-tooltip md-direction="bottom">Clique aqui para adicionar ou remover atalhos</md-tooltip>
             </md-button>
 
             <md-menu-content>
@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="results" ng-if="MsShortcuts.results" ms-scroll>
-                        <div class="no-results" ng-if="MsShortcuts.results.length === 0">No Results!</div>
+                        <div class="no-results" ng-if="MsShortcuts.results.length === 0">Sem resultados!</div>
 
                         <div class="result" ng-repeat="result in MsShortcuts.results"
                              ng-click="MsShortcuts.handleResultClick(result)"
