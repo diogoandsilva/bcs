@@ -21,6 +21,9 @@
         list: {method:'GET', isArray:true, params:{access_token:token}}
       });
       */
+
+      api.usuario = $resource(api.baseUrl + 'usuario/:id', {id: '@id'});
+
       api.usuarios = $resource(api.baseUrl + 'usuarios');
 
       api.ocorrenciaTipo = $resource(api.baseUrl + 'ocorrenciaTipos');
@@ -39,6 +42,8 @@
       */
 
       api.veiculo = $resource(api.baseUrl + 'veiculo/:id', {id: '@id'});
+
+      api.veiculoAdd = $resource(api.baseUrl + 'veiculo');
 
       api.garagem = $resource(api.baseUrl + 'garagem/:id', {id: '@id'});
 

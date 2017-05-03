@@ -23,7 +23,7 @@
 
             <md-input-container class="md-block">
                 <label>Placa</label>
-                <input name="placa" ng-model="vm.veiculo.placa" required md-autofocus>
+                <input name="placa" ng-model="vm.veiculo.placa" required>
                 <div ng-messages="veiculoForm.placa.$error" ng-show="veiculoForm.placa.$touched" role="alert">
                     <div ng-message="required">
                         <span>É necessário informar uma placa para o veículo.</span>
@@ -47,6 +47,59 @@
 
             </div>
 
+            <div layout-xs="column" layout="row">
+
+              <div flex class="info-container">
+                <md-list class="secreto">
+                    <md-list-item class="secreto">
+                      <label>Câmera 01</label>
+                      <md-switch class="md-secondary" ng-model="vm.veiculo.cam1" aria-label="Camera01"></md-switch>
+                    </md-list-item>
+                 </md-list>
+              </div>
+
+              <div flex class="info-container">
+                <md-list class="secreto">
+                    <md-list-item class="secreto">
+                      <label>Câmera 02</label>
+                      <md-switch class="md-secondary" ng-model="vm.veiculo.cam2" aria-label="Camera02"></md-switch>
+                    </md-list-item>
+                 </md-list>
+              </div>
+
+            </div>
+
+            <div layout-xs="column" layout="row">
+
+              <div flex class="info-container">
+                <md-list class="secreto">
+                    <md-list-item class="secreto">
+                      <label>Câmera 03</label>
+                      <md-switch class="md-secondary" ng-model="vm.veiculo.cam3" aria-label="Camera03"></md-switch>
+                    </md-list-item>
+                 </md-list>
+              </div>
+
+              <div flex class="info-container">
+                <md-list class="secreto">
+                    <md-list-item class="secreto">
+                      <label>Câmera 04</label>
+                      <md-switch class="md-secondary" ng-model="vm.veiculo.cam4" aria-label="Camera04"></md-switch>
+                    </md-list-item>
+                 </md-list>
+              </div>
+
+            </div>
+
+            <div flex class="info-container">
+              <md-list class="secreto">
+                  <md-list-item class="secreto">
+                    <label>DVR</label>
+                    <md-switch class="md-secondary" ng-model="vm.veiculo.dvr" aria-label="Dvr"></md-switch>
+                  </md-list-item>
+               </md-list>
+            </div>
+
             <div flex class="info-container">
               <md-list class="secreto">
                   <md-list-item class="secreto">
@@ -55,8 +108,6 @@
                   </md-list-item>
                </md-list>
             </div>
-
-
 
             <div flex class="info-container">
               <md-list class="secreto">
@@ -81,7 +132,7 @@
                 <md-button type="submit" ng-if="vm.newVeiculo" ng-click="vm.addNewVeiculo()"
                            class="send-button md-accent md-raised"
                            ng-disabled="veiculoForm.$invalid || veiculoForm.$pristine"
-                           aria-label="Add Veiculo">
+                           aria-label="ADICIONAR">
                     ADICIONAR
                 </md-button>
             </div>

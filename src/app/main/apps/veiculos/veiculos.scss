@@ -32,6 +32,12 @@
             background: none;
             padding: 0;
 
+            .add-veiculo {
+                position: absolute;
+                top: 60px;
+                left: 30px;
+            }
+
             > md-tabs {
 
                 > md-tabs-wrapper {

@@ -28,6 +28,11 @@
                 'GaragemId'         : '',
                 'createdAt'         : new Date(),
                 'updatedAt'         : new Date(),
+                'cam1'              : true,
+                'cam2'              : true,
+                'cam3'              : true,
+                'cam4'              : true,
+                'dvr'               : true,
                 'monitorado'        : true,
                 'ativo'             : true
             };
@@ -51,14 +56,18 @@
         });
 
 
-        //////////
-
         /**
          * Add new veiculo
          */
         function addNewVeiculo()
         {
-
+            api.veiculoAdd.save(vm.veiculo);
+            //TODO ARRUMAR PARA COLOCAR O ID DA GARAGEM PADRAO DO USUARIO
+            var id = 1;
+            if($state.params.idGaragem){
+              id = $state.params.idGaragem;
+            }
+            $state.reload();
             closeDialog();
         }
 

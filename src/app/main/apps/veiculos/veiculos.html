@@ -25,48 +25,97 @@
                     </md-menu-content>
                 </md-menu>
             </div>
+
         </div>
         <!-- / HEADER -->
 
         <!-- CONTENT -->
         <div class="content">
 
-
           <!-- WIDGET GROUP -->
           <div class="widget-group" layout="row" flex="100" layout-wrap>
+
 
               <!-- WIDGET 11 -->
               <ms-widget layout="row" flex="100">
 
                   <!-- Front -->
                   <ms-widget-front class="white-bg">
+                    <div id="file-uploader">
+                    <md-button class="add-veiculo md-fab md-warn"
+                               ng-click="vm.openVeiculoDialog()" aria-label="Adicionar">
+                        <md-icon md-font-icon="icon-plus"></md-icon>
+                    </md-button>
+                  </div>
 
                       <div class="p-24 mb-8 border-bottom" layout="row" layout-align="space-between center">
                           <div class="h2">{{vm.widget11.title}}</div>
                           <div class="text-boxed red-bg white-fg m-0">{{vm.veiculos.length}}
                               Veículos
                           </div>
+
                       </div>
+
 
                       <table class="dataTable row-border hover" datatable="ng" dt-options="vm.widget11.dtOptions" dt-instance="vm.widget11.dtInstance">
                           <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Prefixo</th>
-                                <th>Placa</th>
-                                <th>Garagem</th>
-                                <th>Monitorado</th>
-                                <th>Ativo</th>
+                              <th class="secondary-text"
+                                  ng-repeat="column in ::vm.widget11.table.columns">
+                                  <div class="table-header">
+                                      <span class="column-title">{{column.title}}</span>
+                                  </div>
+                                </th>
                             </tr>
                           </thead>
                           <tbody>
                               <tr ng-repeat="veiculo in ::vm.veiculos">
-                                  <td>{{ veiculo.id }}</td>
+                                  <td>{{veiculo.id}}</td>
                                   <td>{{ veiculo.identificador }}</td>
                                   <td>{{ veiculo.placa }}</td>
                                   <td>{{ veiculo.Garagem.nome }}</td>
-                                  <td>{{ veiculo.monitorado }}</td>
-                                  <td>{{ veiculo.ativo }}</td>
+                                  <td>
+                                    <md-icon md-font-icon="icon-check" class="is-important green-600-fg"
+                                           ng-if="veiculo.cam1"></md-icon>
+                                    <md-icon md-font-icon="icon-close" class="is-important red-600-fg"
+                                          ng-if="!veiculo.cam1"></md-icon>
+                                  </td>
+                                  <td>
+                                    <md-icon md-font-icon="icon-check" class="is-important green-600-fg"
+                                           ng-if="veiculo.cam2"></md-icon>
+                                    <md-icon md-font-icon="icon-close" class="is-important red-600-fg"
+                                          ng-if="!veiculo.cam2"></md-icon>
+                                  </td>
+                                  <td>
+                                    <md-icon md-font-icon="icon-check" class="is-important green-600-fg"
+                                           ng-if="veiculo.cam3"></md-icon>
+                                    <md-icon md-font-icon="icon-close" class="is-important red-600-fg"
+                                          ng-if="!veiculo.cam3"></md-icon>
+                                  </td>
+                                  <td>
+                                    <md-icon md-font-icon="icon-check" class="is-important green-600-fg"
+                                           ng-if="veiculo.cam4"></md-icon>
+                                    <md-icon md-font-icon="icon-close" class="is-important red-600-fg"
+                                          ng-if="!veiculo.cam4"></md-icon>
+                                  </td>
+                                  <td>
+                                    <md-icon md-font-icon="icon-check" class="is-important green-600-fg"
+                                           ng-if="veiculo.dvr"></md-icon>
+                                    <md-icon md-font-icon="icon-close" class="is-important red-600-fg"
+                                          ng-if="!veiculo.dvr"></md-icon>
+                                  </td>
+                                  <td>
+                                    <md-icon md-font-icon="icon-check" class="is-important green-600-fg"
+                                           ng-if="veiculo.monitorado"></md-icon>
+                                    <md-icon md-font-icon="icon-close" class="is-important red-600-fg"
+                                          ng-if="!veiculo.monitorado"></md-icon>
+                                  </td>
+                                  <td>
+                                    <md-icon md-font-icon="icon-check" class="is-important green-600-fg"
+                                           ng-if="veiculo.ativo"></md-icon>
+                                    <md-icon md-font-icon="icon-close" class="is-important red-600-fg"
+                                          ng-if="!veiculo.ativo"></md-icon>
+                                  </td>
                               </tr>
                           </tbody>
                       </table>

@@ -4,6 +4,9 @@
         "table": {
             "columns": [
                 {
+                    "title": "Id"
+                },
+                {
                     "title": "Prefixo"
                 },
                 {
@@ -13,7 +16,25 @@
                     "title": "Garagem"
                 },
                 {
+                    "title": "Cam 1"
+                },
+                {
+                    "title": "Cam 2"
+                },
+                {
+                    "title": "Cam 3"
+                },
+                {
+                    "title": "Cam 4"
+                },
+                {
+                    "title": "DVR"
+                },
+                {
                     "title": "Monitorado"
+                },
+                {
+                    "title": "Ativo"
                 }
             ]
         }

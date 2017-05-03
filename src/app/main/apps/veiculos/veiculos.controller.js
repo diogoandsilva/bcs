@@ -7,7 +7,7 @@
         .controller('VeiculosController', VeiculosController);
 
     /** @ngInject */
-    function VeiculosController($http, $document, $mdDialog, $mdSidenav, $state, $scope, $interval,  Veiculos, api)
+    function VeiculosController($http, $document, $mdDialog, $mdSidenav, $state, $scope, $interval, $rootScope,  Veiculos, api)
     {
         var vm = this;
 
@@ -34,6 +34,8 @@
 
         // Methods
         vm.toggleSidenav = toggleSidenav;
+        vm.selectGaragem = selectGaragem;
+        vm.openVeiculoDialog = openVeiculoDialog;
 
         // Widget 11
         vm.widget11 = {
@@ -46,19 +48,17 @@
                 pagingType: 'simple',
                 autoWidth : false,
                 responsive: true,
-                order     : [0, 'asc'],
+                order     : [1, 'asc'],
                 columnDefs: [
                     {
-                        width  : '16%',
-                        targets: [0, 1, 2, 3, 4, 5]
+                        width  : '12%',
+                        targets: [0, 1, 2, 3, 8, 9 , 10]
                     }
                 ],
                 rowCallback: rowCallback
             },
             dtInstance: {}
         };
-
-        vm.selectGaragem = selectGaragem;
 
         /**
          * Open new veiculo dialog
